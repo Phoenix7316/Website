@@ -1,0 +1,239 @@
+---
+layout: default
+permalink: /about/
+---
+
+<section class="hero">
+<p class="eyebrow">05 / ABOUT</p>
+
+<h1>Curiosity, <span class="accent">mathematics,</span> and the physics of nature.</h1>
+
+<p class="lede">
+I am a graduate student in the Theory Division at the Saha Institute
+of Nuclear Physics, Kolkata, working in relativistic hydrodynamics
+and exploring the theoretical foundations of strongly interacting matter.
+</p>
+
+<div class="hero-links">
+<a class="text-link" href="#background">Academic background ↘</a>
+<a class="text-link" href="#interests">Research interests ↘</a>
+<a class="text-link" href="{{ '/research/' | relative_url }}">Research page ↗</a>
+<a class="text-link" href="{{ '/cv/' | relative_url }}">Curriculum vitae ↗</a>
+</div>
+</section>
+
+<section class="section" id="background">
+<div class="section-heading">
+<p class="eyebrow">01 / BACKGROUND</p>
+<h2>A little about me</h2>
+</div>
+
+<div class="section-content">
+<p>
+I am a graduate student in the <strong>Theory Division at the
+Saha Institute of Nuclear Physics, Kolkata</strong>, where my
+academic interests centre on relativistic hydrodynamics and
+theoretical high-energy physics.
+</p>
+
+
+<p>
+  I am interested in understanding how the fundamental principles
+  of physics give rise to complex collective phenomena. In particular,
+  I am drawn to the relationship between microscopic interactions,
+  mathematical structures, and the macroscopic behaviour of physical
+  systems under extreme conditions.
+</p>
+
+<p>
+  For me, theoretical physics is an ongoing process of asking precise
+  questions, constructing mathematical descriptions, and examining
+  the assumptions that connect those descriptions to physical reality.
+  I value the interplay between mathematical reasoning and physical
+  intuition, as well as the careful comparison of theoretical ideas
+  with evidence.
+</p>
+</div>
+</section>
+
+<section class="section" id="background-education">
+<div class="section-heading">
+<p class="eyebrow">02 / EDUCATION</p>
+<h2>Academic journey</h2>
+</div>
+
+<div class="section-content">
+
+<article class="entry">
+  <div class="entry-meta">Jan.2025 – PRESENT</div>
+  <div>
+    <h3 class="entry-title">Saha Insitute of Nuclear Physics, Kolkata</h3>
+    <p><strong>Doctoral candidate</strong></p>
+    <p>
+      Graduate studies focused on relativistic
+      hydrodynamics and related topics in field theory.
+    </p>
+    <span class="tag">Graduate studies</span>
+    <span class="tag">Theoretical physics</span>
+  </div>
+</article>
+
+<article class="entry">
+  <div class="entry-meta">2023</div>
+  <div>
+    <h3 class="entry-title">Indian Institute of Technology Kanpur</h3>
+    <p><strong>Masters in Physics</strong></p>
+    <p>
+      Advanced coursework in core physics and field theory techniques for subsequent research in theoretical physics.
+    </p>
+    <span class="tag">Physics</span>
+    <span class="tag">Mathematical methods</span>
+  </div>
+</article>
+
+<article class="entry">
+  <div class="entry-meta">2020</div>
+  <div>
+    <h3 class="entry-title">Banaras Hindu University</h3>
+    <p><strong>Bachelor in Science (Hons.)--Physics</strong></p>
+    <p>
+      Basic training in physics and the mathematical foundations
+      relevant to further study in theoretical physics.
+    </p>
+    <span class="tag">Physics</span>
+    <span class="tag">Mathematical methods</span>
+  </div>
+</article>
+
+
+</div>
+</section>
+
+<section class="section" id="interests">
+<div class="section-heading">
+<p class="eyebrow">03 / INTERESTS</p>
+<h2>Questions that motivate me</h2>
+</div>
+
+<div class="section-content">
+<article class="entry">
+<div class="entry-meta">01 / PRIMARY INTEREST</div>
+<div>
+<h3 class="entry-title">Relativistic hydrodynamics</h3>
+<p>
+Understanding how matter evolves when relativistic effects
+become essential, and how conservation laws and constitutive
+relations describe the collective dynamics of strongly
+interacting systems.
+</p>
+<span class="tag">Fluid dynamics</span>
+<span class="tag">Transport phenomena</span>
+</div>
+</article>
+
+
+<article class="entry">
+  <div class="entry-meta">02 / THEORETICAL FOUNDATIONS</div>
+  <div>
+    <h3 class="entry-title">Quantum field theory</h3>
+    <p>
+      Exploring the mathematical framework of quantum fields and
+      their role in describing fundamental interactions, thermal
+      systems, and the microscopic properties of matter.
+    </p>
+    <span class="tag">Quantum fields</span>
+    <span class="tag">Thermal physics</span>
+  </div>
+</article>
+
+<article class="entry">
+  <div class="entry-meta">03 / MATHEMATICAL PHYSICS</div>
+  <div>
+    <h3 class="entry-title">Mathematical structure & physical intuition</h3>
+    <p>
+      I enjoy studying the mathematical ideas behind physical theories,
+      from symmetries and differential equations to the assumptions
+      that determine the scope and consistency of a model.
+    </p>
+    <span class="tag">Mathematical reasoning</span>
+    <span class="tag">Physical principles</span>
+  </div>
+</article>
+</div>
+</section>
+
+<section class="section" id="approach">
+<div class="section-heading">
+<p class="eyebrow">04 / APPROACH</p>
+<h2>How I think about physics</h2>
+</div>
+
+<div class="section-content">
+<p>
+I believe that progress in theoretical physics comes from combining
+clear mathematical reasoning with an understanding of the physical
+ideas a theory is intended to describe.
+</p>
+
+
+<p>
+  I am particularly interested in examining how assumptions enter
+  a theoretical framework, what its equations imply, and under which
+  conditions its predictions can be trusted. Working through a
+  derivation carefully is, for me, as important as understanding
+  the intuition behind the final result.
+</p>
+
+<p>
+  I also value the broader scientific process: learning from existing
+  literature, questioning familiar explanations, discussing ideas
+  with others, and remaining open to evidence that challenges an
+  initial interpretation.
+</p>
+</div>
+</section>
+
+<section class="section" id="beyond-research">
+<div class="section-heading">
+<p class="eyebrow">05 / PERSPECTIVE</p>
+<h2>Beyond individual problems</h2>
+</div>
+
+<div class="section-content">
+<p>
+Beyond any particular research question, I am interested in the
+broader relationship between mathematics and nature: why certain
+mathematical structures describe physical systems so effectively,
+how simple principles can produce complex behaviour, and where
+the limits of our theoretical descriptions lie.
+</p>
+
+
+<p>
+  These questions continue to shape the way I approach physics,
+  mathematics, and the process of scientific learning.
+</p>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="section-heading">
+<p class="eyebrow">06 / CONNECT</p>
+<h2>Scientific exchange</h2>
+</div>
+
+<div class="section-content">
+<p>
+I welcome academic discussions and exchanges of ideas related to
+theoretical high-energy physics, relativistic hydrodynamics, and
+the mathematical foundations of physical theories.
+</p>
+
+
+<div class="hero-links">
+  <a class="text-link" href="{{ '/research/' | relative_url }}">Explore my research ↗</a>
+  <a class="text-link" href="{{ '/resources/' | relative_url }}">Research resources ↗</a>
+  <a class="text-link" href="{{ '/cv/' | relative_url }}">View curriculum vitae ↗</a>
+</div>
+</div>
+</section>

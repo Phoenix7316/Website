@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- Umami Analytics -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+
+<link rel="stylesheet"
+      href="/grad-site/assets/css/style.css">
+
+  <title>The Yang–Mills Mass Gap Problem — Sharad Shukla</title>
+
+  <meta name="description"
+        content="Research, publications, projects, and academic ideas.">
+
+  <meta name="theme-color" content="#090D1F">
+
+  <link rel="stylesheet"
+        href="/grad-site/assets/css/style.css">
+
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/grad-site/feed.xml" title="Sharad Shukla" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Yang–Mills Mass Gap Problem | Sharad Shukla</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="The Yang–Mills Mass Gap Problem" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A mathematical introduction to Yang–Mills theory, dimensional transmutation, and the mass gap problem." />
+<meta property="og:description" content="A mathematical introduction to Yang–Mills theory, dimensional transmutation, and the mass gap problem." />
+<link rel="canonical" href="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/" />
+<meta property="og:url" content="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/" />
+<meta property="og:site_name" content="Sharad Shukla" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-10T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Yang–Mills Mass Gap Problem" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-10T00:00:00+05:30","datePublished":"2026-10-10T00:00:00+05:30","description":"A mathematical introduction to Yang–Mills theory, dimensional transmutation, and the mass gap problem.","headline":"The Yang–Mills Mass Gap Problem","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/"},"url":"http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+</head>
+
+<body>
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/grad-site/">
+      <span class="wordmark-mark" aria-hidden="true">✦</span>
+      <span>Sharad Shukla</span>
+    </a>
+
+    <nav class="navigation" aria-label="Main navigation">
+  <a href="/grad-site/research/">Research</a>
+  <a href="/grad-site/publications/">Publications</a>
+  <a href="/grad-site/cv/">CV</a>
+  <a href="/grad-site/resources/">Resources</a>
+  <a href="/grad-site/about/">About</a>
+  <a href="/grad-site/contact/">Contact Me</a>
+  <a href="/grad-site/notes/">Notes</a>
+</nav>
+
+  </header>
+
+  <main id="main" class="site-main">
+    
+      <div class="page-heading">
+        
+
+        <h1>The Yang–Mills Mass Gap Problem</h1>
+
+        
+      </div>
+    
+
+    <p class="eyebrow">RESEARCH NOTE / 001</p>
+
+<h1 id="the-yangmills-mass-gap-problem">The Yang–Mills Mass Gap Problem</h1>
+
+<p><em>How can a quantum field theory built from classically massless gauge fields develop a positive energy scale?</em></p>
+
+<p><strong>Field:</strong> Mathematical Physics<br />
+<strong>Status:</strong> Open mathematical problem</p>
+
+<hr />
+
+<h2 id="01--introduction">01 / Introduction</h2>
+
+<p>The Yang–Mills mass gap problem is one of the Millennium Prize Problems proposed by the Clay Mathematics Institute.</p>
+
+<p>The problem asks for a rigorous construction of a nontrivial quantum Yang–Mills theory on four-dimensional spacetime and a proof that the theory has a strictly positive mass gap.</p>
+
+<p>The central question is:</p>
+
+<blockquote>
+  <p>Why should a quantum theory whose classical formulation contains no explicit gauge-field mass possess a positive energy gap above the vacuum?</p>
+</blockquote>
+
+<h2 id="02--the-yangmills-field">02 / The Yang–Mills field</h2>
+
+<p>Let $G$ be a compact, simple gauge group, and let $A_\mu$ denote its gauge field.</p>
+
+<p>The field strength is</p>
+
+\[F_{\mu\nu}
+=
+\partial_\mu A_\nu
+-
+\partial_\nu A_\mu
++
+g[A_\mu,A_\nu].\]
+
+<p>Here, $g$ is the gauge coupling, and the commutator describes the nonlinear interactions characteristic of non-Abelian gauge theories.</p>
+
+<p>The Yang–Mills action, in one common convention, is</p>
+
+\[S_{\mathrm{YM}}
+=
+-\frac{1}{2}
+\int d^4x\,
+\operatorname{Tr}
+\left(F_{\mu\nu}F^{\mu\nu}\right).\]
+
+<p>The classical equations of motion in the absence of sources are</p>
+
+\[D_\mu F^{\mu\nu}=0,\]
+
+<p>where $D_\mu$ is the gauge-covariant derivative.</p>
+
+<h2 id="03--defining-the-mass-gap">03 / Defining the mass gap</h2>
+
+<p>Let (H) be the Hamiltonian and (E_0) the vacuum energy.</p>
+
+<p>A positive spectral gap means that there exists a constant $\Delta&gt;0$ such that</p>
+
+\[\operatorname{spec}(H)
+\subseteq
+\{E_0\}
+\cup
+[E_0+\Delta,\infty).\]
+
+<p>This is a schematic description of a spectrum in which the vacuum is separated from the non-vacuum spectrum by a positive energy difference.</p>
+
+<p>In relativistic units, where (c=\hbar=1), energy and mass have the same units.</p>
+
+<p>The mass gap is a property of the quantum spectrum. It does not require inserting an explicit mass term into the classical Yang–Mills action.</p>
+
+<h2 id="04--asymptotic-freedom">04 / Asymptotic freedom</h2>
+
+<p>In four dimensions, the quantum gauge coupling depends on the renormalization scale.</p>
+
+<p>Its evolution is described by the renormalization-group equation</p>
+
+\[\mu\frac{dg}{d\mu}=\beta(g),\]
+
+<p>where (\mu) is the renormalization scale and (\beta(g)) is the beta function.</p>
+
+<p>For pure (SU(N)) Yang–Mills theory, the leading perturbative result is</p>
+
+\[\beta(g)
+=
+-\frac{11N}{3}
+\frac{g^3}{16\pi^2}
++
+O(g^5).\]
+
+<p>The negative leading coefficient implies asymptotic freedom: the coupling becomes weaker at sufficiently high energies.</p>
+
+<p>At one-loop order, a characteristic scale can be expressed schematically as</p>
+
+\[\Lambda_{\mathrm{YM}}
+\sim
+\mu
+\exp\left(
+-\frac{8\pi^2}{b_0g^2(\mu)}
+\right),
+\qquad
+b_0=\frac{11N}{3}.\]
+
+<p>This is an example of <strong>dimensional transmutation</strong>: quantum effects introduce a scale even though the classical theory has no intrinsic mass parameter.</p>
+
+<p>The emergence of this scale is an important clue, but it is not a proof of a positive mass gap.</p>
+
+<h2 id="05--why-is-the-problem-difficult">05 / Why is the problem difficult?</h2>
+
+<h3 id="nonlinear-interactions">Nonlinear interactions</h3>
+
+<p>The term</p>
+
+\[g[A_\mu,A_\nu]\]
+
+<p>makes the field strength nonlinear in the gauge field. The gauge bosons interact with one another, creating a theory with rich nonperturbative behaviour.</p>
+
+<h3 id="perturbation-theory-is-insufficient">Perturbation theory is insufficient</h3>
+
+<p>Perturbation theory studies expansions around a reference configuration. A formal expansion does not establish the existence of the complete four-dimensional quantum theory or prove its spectral properties.</p>
+
+<h3 id="a-rigorous-construction-is-required">A rigorous construction is required</h3>
+
+<p>A mathematical solution must construct the quantum theory and prove that its physical spectrum has a strictly positive gap. Numerical evidence and physical intuition, although valuable, do not complete this proof.</p>
+
+<h2 id="06--mass-gap-and-confinement">06 / Mass gap and confinement</h2>
+
+<p>The mass gap and confinement are related but distinct.</p>
+
+<ul>
+  <li><strong>Mass gap:</strong> a positive energy separation between the vacuum and the lowest non-vacuum physical states.</li>
+  <li><strong>Confinement:</strong> the absence of isolated coloured states in the physical spectrum of the confining theory.</li>
+</ul>
+
+<p>Both concepts are central to understanding non-Abelian gauge theories and quantum chromodynamics.</p>
+
+<h2 id="07--references">07 / References</h2>
+
+<ol>
+  <li>Clay Mathematics Institute, <a href="https://www.claymath.org/millennium/yang-mills-the-mass-gap/">Yang–Mills and the Mass Gap</a>.</li>
+  <li>C. N. Yang and R. L. Mills, <a href="https://doi.org/10.1103/PhysRev.96.191">Conservation of Isotopic Spin and Isotopic Gauge Invariance</a>, <em>Physical Review</em> (1954).</li>
+  <li>D. J. Gross and F. Wilczek, <a href="https://doi.org/10.1103/PhysRevLett.30.1343">Ultraviolet Behavior of Non-Abelian Gauge Theories</a>, <em>Physical Review Letters</em> (1973).</li>
+</ol>
+
+<h2 id="08--questions-for-further-study">08 / Questions for further study</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Derive the equations of motion from the Yang–Mills action.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Study the one-loop beta function.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Investigate dimensional transmutation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Compare the mass gap with confinement.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Read the official Millennium Prize Problem statement.</li>
+</ul>
+
+<hr />
+
+<p><em>Research notebook / Mathematical physics / Entry 001</em></p>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>
+      © 2026
+      Sharad Shukla
+    </span>
+
+    <nav aria-label="Footer navigation">
+      <a href="/grad-site/about/">
+        About &amp; contact ↗
+      </a>
+    </nav>
+  </footer>
+</body>
+</html>

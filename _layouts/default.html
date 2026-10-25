@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+<head>
+<!-- Umami Analytics -->
+{% if jekyll.environment == "production" %}
+  <script async src="https://cloud.umami.is/script.js" 
+          data-website-id="YOUR-UMAMI-WEBSITE-ID"></script>
+{% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+
+<link rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site.title | escape }}</title>
+
+  <meta name="description"
+        content="{{ page.description | default: site.description | escape }}">
+
+  <meta name="theme-color" content="#090D1F">
+
+  <link rel="stylesheet"
+        href="{{ '/assets/css/style.css' | relative_url }}">
+
+  {% feed_meta %}
+  {% seo %}
+
+  {% if page.math %}
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: [
+          'script', 'noscript', 'style',
+          'textarea', 'pre', 'code'
+        ]
+      },
+      chtml: {
+        scale: 1.05
+      }
+    };
+  </script>
+
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  {% endif %}
+</head>
+
+<body>
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+  <header class="site-header">
+    <a class="wordmark" href="{{ '/' | relative_url }}">
+      <span class="wordmark-mark" aria-hidden="true">✦</span>
+      <span>{{ site.title | escape }}</span>
+    </a>
+
+    {% include nav.html %}
+  </header>
+
+  <main id="main" class="site-main">
+    {% if page.title %}
+      <div class="page-heading">
+        {% if page.section %}
+          <p class="eyebrow">{{ page.section | escape }}</p>
+        {% endif %}
+
+        <h1>{{ page.title | escape }}</h1>
+
+        {% if page.description %}
+          <p class="lede">{{ page.description | escape }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <span>
+      © {{ site.time | date: "%Y" }}
+      {{ site.title | escape }}
+    </span>
+
+    <nav aria-label="Footer navigation">
+      <a href="{{ '/about/' | relative_url }}">
+        About &amp; contact ↗
+      </a>
+    </nav>
+  </footer>
+</body>
+</html>

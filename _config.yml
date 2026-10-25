@@ -1,0 +1,21 @@
+title: "Sharad Shukla"
+description: "Research, publications, projects, and academic ideas."
+lang: en
+
+url: "https://YOUR-USERNAME.github.io"
+baseurl: "/grad-site/"
+
+markdown: kramdown
+permalink: pretty
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

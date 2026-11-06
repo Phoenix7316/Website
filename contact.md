@@ -1,38 +1,45 @@
 ---
 layout: default
 permalink: /contact/
+math: true
 ---
 
 <section class="hero">
-<p class="eyebrow">06 / CONTACT</p>
-
+<p class="eyebrow">05 / CONTACT</p>
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="catenoid"
+     style="top: 8%; right: 5%;">
+</div>
 <h1>Let's <span class="accent">connect.</span></h1>
 
 <p class="lede">
 For research discussions, academic correspondence, or potential
-collaborations in theoretical physics, I welcome hearing from you.
+collaborations in theoretical physics, I welcome hearing 
+from you.
 </p>
-
 <div class="hero-links">
 <a class="text-link" href="mailto:sharad.shukla@saha.ac.in">Send an email ↗</a>
-<a class="text-link" href="#academic-profiles">Academic profiles ↘</a>
 <a class="text-link" href="#affiliation">Institutional affiliation ↘</a>
 </div>
 </section>
 
 <section class="section" id="email">
 <div class="section-heading">
-<p class="eyebrow">02 / CORRESPONDENCE</p>
+<p class="eyebrow">01 / CORRESPONDENCE</p>
 <h2>Get in touch</h2>
 </div>
 
 <div class="section-content">
 <p>
-Please feel free to contact me by email for research-related
-discussions, collaboration opportunities, or other academic
-enquiries. I will do my best to respond as soon as possible.
+I am happy to hear from students, researchers, and academics
+interested in theoretical high-energy physics, and related areas
+of mathematical physics.
 </p>
-
+<p>
+Whether you would like to discuss a research question, exchange
+references, or explore a possible collaboration. Please feel free
+ to drop me an email. I will respond as soon as possible.
+</p>
 
 <article class="entry">
   <div class="entry-meta">EMAIL</div>
@@ -51,72 +58,19 @@ enquiries. I will do my best to respond as soon as possible.
     </a>
   </div>
 </article>
-</div>
-</section>
-
-<section class="section" id="academic-profiles">
-<div class="section-heading">
-<p class="eyebrow">03 / ONLINE PRESENCE</p>
-<h2>Academic & professional profiles</h2>
-</div>
-
-<div class="section-content">
-<p>
-These platforms provide ways to explore my research interests,
-scholarly activity, and technical work.
-</p>
-
-
 <article class="entry">
-  <div class="entry-meta">01 / SCHOLARSHIP</div>
+  <div class="entry-meta">EMAIL</div>
   <div>
     <h3 class="entry-title">
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">
-        Google Scholar
+      <a href="mailto:ssharad0002@gmail.com">
+        ssharad0002@gmail.com
       </a>
     </h3>
     <p>
-      A platform for discovering scholarly publications, research
-      papers, and citation information.
+      Here is my alternative email address.
     </p>
-    <a class="text-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">
-      Visit Google Scholar ↗
-    </a>
-  </div>
-</article>
-
-<article class="entry">
-  <div class="entry-meta">02 / RESEARCH IDENTITY</div>
-  <div>
-    <h3 class="entry-title">
-      <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">
-        ORCID
-      </a>
-    </h3>
-    <p>
-      A persistent researcher identifier that helps distinguish
-      scholarly work and maintain a consistent academic identity.
-    </p>
-    <a class="text-link" href="https://orcid.org/" target="_blank" rel="noopener noreferrer">
-      Visit ORCID ↗
-    </a>
-  </div>
-</article>
-
-<article class="entry">
-  <div class="entry-meta">03 / CODE & PROJECTS</div>
-  <div>
-    <h3 class="entry-title">
-      <a href="https://github.com/Phoenix_7316" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    </h3>
-    <p>
-      A space for sharing code, computational projects, and other
-      technical work.
-    </p>
-    <a class="text-link" href="https://github.com/Phoenix_7316" target="_blank" rel="noopener noreferrer">
-      Visit GitHub ↗
+    <a class="text-link" href="mailto:ssharad0002@gmail.com">
+      Write an email ↗
     </a>
   </div>
 </article>
@@ -125,7 +79,7 @@ scholarly activity, and technical work.
 
 <section class="section" id="affiliation">
 <div class="section-heading">
-<p class="eyebrow">04 / AFFILIATION</p>
+<p class="eyebrow">02 / AFFILIATION</p>
 <h2>Institutional address</h2>
 </div>
 
@@ -146,31 +100,5 @@ Saha Institute of Nuclear Physics in Kolkata, India.
     West Bengal, India.
   </p>
 </article>
-</div>
-</section>
-
-<section class="section" id="collaboration">
-<div class="section-heading">
-<p class="eyebrow">05 / COLLABORATION</p>
-<h2>Ideas begin with a conversation</h2>
-</div>
-
-<div class="section-content">
-<p>
-I am happy to hear from students, researchers, and academics
-interested in theoretical high-energy physics, relativistic
-hydrodynamics, and related areas of mathematical physics.
-</p>
-
-
-<p>
-  Whether you would like to discuss a research question, exchange
-  references, or explore a possible collaboration, you are welcome
-  to get in touch.
-</p>
-
-<a class="text-link" href="mailto:sharad.shukla@saha.ac.in">
-  Start a conversation ↗
-</a>
 </div>
 </section>

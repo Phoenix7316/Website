@@ -1,0 +1,336 @@
+
+/* =========================================
+   MATHBG — EDITORIAL MATHEMATICAL BACKGROUND
+   Palette derived from the website stylesheet
+   ========================================= */
+
+:root {
+  --math-paper: #f5f3ed;
+  --math-ink: #191919;
+  --math-muted: #706e67;
+  --math-red: #d52b1e;
+  --math-line: #d8d4ca;
+  --math-white: #fffefa;
+}
+
+/* Keep the site's existing paper background. */
+body {
+  position: absolute;
+}
+
+/* Fixed layer, visible behind page content. */
+#math-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* Put actual website content above the background. */
+body > *:not(#math-background) {
+  position: relative;
+  z-index: 0;
+}
+
+#math-background svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Geometric outlines */
+.math-line {
+  fill: none;
+  stroke: var(--math-ink);
+  stroke-width: 1;
+  opacity: 0.18;
+}
+
+.math-muted-line {
+  fill: none;
+  stroke: var(--math-muted);
+  stroke-width: 1;
+  opacity: 0.25;
+}
+
+.math-red-line {
+  fill: none;
+  stroke: var(--math-red);
+  stroke-width: 1.3;
+  opacity: 0.4;
+}
+
+.math-dot {
+  fill: var(--math-red);
+  opacity: 0.55;
+}
+
+/* Floating mathematical notation */
+.math-equation {
+  fill: var(--math-muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  opacity: 0.31;
+  letter-spacing: 0.3px;
+}
+
+.math-symbol {
+  fill: var(--math-red);
+  font-family: Georgia, serif;
+  font-size: 25px;
+  opacity: 0.28;
+}
+
+/* Möbius ribbon */
+.math-mobius-surface path {
+  stroke: rgba(25, 25, 25, 0.13);
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+}
+
+.math-mobius-mesh path {
+  fill: none;
+  stroke: #6d655c;
+  stroke-width: 0.75;
+  opacity: 0.52;
+  stroke-linecap: round;
+}
+
+/* Decorative geometry movement */
+.math-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: math-drift 18s ease-in-out infinite alternate;
+}
+
+.math-float.delay-one {
+  animation-duration: 23s;
+  animation-delay: -7s;
+}
+
+.math-float.delay-two {
+  animation-duration: 20s;
+  animation-delay: -11s;
+}
+
+@keyframes math-drift {
+  from {
+    transform: translate3d(0, -8px, 0) rotate(-2deg);
+  }
+
+  to {
+    transform: translate3d(0, 8px, 0) rotate(2deg);
+  }
+}
+
+/* Smaller decorative details on mobile */
+@media (max-width: 680px) {
+  .math-equation {
+    font-size: 12px;
+    opacity: 0.23;
+  }
+
+  .math-symbol {
+    font-size: 19px;
+  }
+
+  .math-muted-line {
+    opacity: 0.17;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .math-float {
+    animation: none !important;
+  }
+}
+
+
+
+/* =====================================
+   CONTENT-AWARE MATHEMATICAL PLACEMENT
+   ===================================== */
+
+#math-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Keep actual website content above animations. */
+body > *:not(#math-background) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep animations away from the central text column. */
+#math-background .math-float {
+  opacity: 0.8;
+}
+
+#math-background .math-left {
+  transform-origin: center;
+}
+
+#math-background .math-right {
+  transform-origin: center;
+}
+
+/* Desktop: keep the centre relatively clear. */
+@media (min-width: 1100px) {
+  #math-background .math-left {
+    transform: translateX(-40px);
+  }
+
+  #math-background .math-right {
+    transform: translateX(40px);
+  }
+}
+
+/* Smaller screens: reduce peripheral details. */
+@media (max-width: 900px) {
+  #math-background .math-equation {
+    opacity: 0.14;
+  }
+}
+
+
+
+
+
+/* =====================================
+   VERSION A — SIDE MARGINS
+   ===================================== */
+
+html[data-mathbg="side"] #math-circle {
+  transform: translate(-25px, 0);
+}
+
+html[data-mathbg="side"] #math-mobius-position {
+  transform: translate(350px, 0) scale(.8);
+  transform-origin: center;
+}
+
+
+/* ----------------------------------
+   Riemann surface illustrations
+---------------------------------- */
+
+.riemannsurface {
+  width: 450px;
+  height: 350px;
+  float: right;
+  margin: 0.2rem 0 1rem 1.5rem;
+  position: relative;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.riemannsurface svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.riemannsurface .surface-mesh {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 0.85;
+  stroke-opacity: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.riemannsurface .surface-accent {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.35;
+  stroke-opacity: 0.9;
+  stroke-linecap: round;
+}
+
+@media (max-width: 680px) {
+  .riemannsurface {
+    width: 125px;
+    height: 110px;
+    margin-left: 0.8rem;
+    opacity: 0.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .riemannsurface {
+    opacity: 0.6;
+  }
+}
+
+.riemannsurface svg path {
+  fill: none !important;
+  stroke-width: 0.85px !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.riemannsurface svg .surface-mesh {
+  stroke: #706e67 !important;
+  stroke-opacity: 0.65;
+}
+
+.riemannsurface svg .surface-accent {
+  stroke: #d52b1e !important;
+  stroke-width: 1.2px !important;
+  stroke-opacity: 0.9;
+}
+/* Keep the text above the surface */
+.math-anchor > p,
+.math-anchor > h1,
+.math-anchor > h2,
+.math-anchor > h3,
+.math-anchor > span,
+.math-anchor > ul,
+.math-anchor > ol {
+  position: relative;
+  z-index: 1;
+}
+.math-anchor {
+  position: relative;
+  isolation: isolate;
+}
+
+.riemannsurface {
+  position: absolute;
+  z-index: 0;
+  width: 280px;
+  height: 240px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.35;
+}
+
+.riemannsurface svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.math-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1080px) {
+  .riemannsurface {
+    width: 670px;
+    height: 520px;
+    opacity: 0.25;
+  }
+}

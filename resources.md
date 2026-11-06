@@ -1,17 +1,21 @@
 ---
 layout: default
 permalink: /resources/
+math: true
 ---
 
 <section class="hero">
 <p class="eyebrow">04 / RESOURCES</p>
-
-<h1>Ideas, references & <span class="accent">useful tools.</span></h1>
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="enneper"
+     style="top: 7%; right: 3%;">
+</div>
+<h1>References & <span class="accent">useful tools.</span></h1>
 
 <p class="lede">
 A curated collection of papers, lecture notes, books, and online
-resources related to relativistic hydrodynamics, general relativity,
-and theoretical high-energy physics.
+resources related to Hydrodynamics, General Relativity,
+and Theoretical High-Energy Physics.
 </p>
 
 <div class="hero-links">
@@ -24,7 +28,7 @@ and theoretical high-energy physics.
 
 <section class="section" id="papers">
 <div class="section-heading">
-<p class="eyebrow">02 / LITERATURE</p>
+<p class="eyebrow">01 / LITERATURE</p>
 <h2>Review papers & articles</h2>
 </div>
 
@@ -44,7 +48,7 @@ developments in theoretical physics.
     </a>
   </h3>
   <p>
-    Pavel Kovtun's lecture notes on relativistic fluid dynamics,
+    <span class="accent">Pavel Kovtun's</span> lecture notes on relativistic fluid dynamics,
     covering conservation laws, hydrodynamic constitutive relations,
     and the theoretical foundations of fluid behaviour near equilibrium.
   </p>
@@ -52,6 +56,7 @@ developments in theoretical physics.
     Read on arXiv ↗
   </a>
 </article>
+
 
 <article class="publication">
   <p class="publication-type">GENERAL RELATIVITY</p>
@@ -61,12 +66,10 @@ developments in theoretical physics.
     </a>
   </h3>
   <p>
-    Sean Carroll's lecture notes introducing the geometric formulation
-    of gravity, spacetime curvature, tensor calculus, and Einstein's
-    field equations.
+    <span class="accent">Matthias Blau's</span> lecture notes on General Relativity spans across a wide range of concepts and applications related to behaviour of matter and fields in non-Euclidean geometries.
   </p>
-  <a class="text-link" href="https://arxiv.org/abs/gr-qc/9712019" target="_blank" rel="noopener noreferrer">
-    Read on arXiv ↗
+  <a class="text-link" href="http://blau.itp.unibe.ch/GRLecturenotes.html" target="_blank" rel="noopener noreferrer">
+    Access the notes ↗
   </a>
 </article>
 
@@ -102,13 +105,13 @@ developments in theoretical physics.
   <a class="text-link" href="{{ '/assets/pdf/research-paper.pdf' | relative_url }}">
     Download PDF ↓
   </a>
-</article>
+</article> 
 </div>
 </section>
 
 <section class="section" id="books">
 <div class="section-heading">
-<p class="eyebrow">03 / BOOKSHELF</p>
+<p class="eyebrow">02 / BOOKSHELF</p>
 <h2>Books & monographs</h2>
 </div>
 
@@ -116,59 +119,70 @@ developments in theoretical physics.
 <p>
 Books are valuable for developing a systematic understanding of
 the mathematical framework and physical principles underlying
-relativistic fluid dynamics and high-energy physics.
+field theory and high-energy physics.
 </p>
 
 
 <article class="entry">
-  <div class="entry-meta">01 / FLUID DYNAMICS</div>
+  <div class="entry-meta">01 / FUNDAMENTALS</div>
   <div>
     <h3 class="entry-title">
-      <a href="https://www.cambridge.org/core/books/relativistic-fluid-dynamics-in-and-out-of-equilibrium/" target="_blank" rel="noopener noreferrer">
-        Relativistic Fluid Dynamics In and Out of Equilibrium
+      <a href=" " target="_blank" rel="noopener noreferrer">
+      Course of Theoretical Physics Vol.1-10
       </a>
     </h3>
     <p>
-      Paolo Romatschke and Ulrike Romatschke. Cambridge University
-      Press, 2019.
+      Landau & Lifshitz
     </p>
     <p>
-      A detailed treatment of relativistic hydrodynamics, including
-      dissipative effects and the behaviour of fluids away from
-      equilibrium.
+      A detailed treatment of fundamentals of physics spanning from mechanics, electrodynamics,
+      quantum mechanics, relativistic QM to theory of elasticity, fluids and statistical physics.
+      Can truely be characterized as old testaments of physics !
     </p>
-    <span class="tag">Hydrodynamics</span>
-    <span class="tag">Dissipation</span>
+    <span class="tag">Fundamentals</span>
   </div>
 </article>
 
 <article class="entry">
-  <div class="entry-meta">02 / THERMAL FIELD THEORY</div>
+  <div class="entry-meta">02 / QUANTUM FIELD THEORY</div>
   <div>
     <h3 class="entry-title">
-      <a href="https://www.cambridge.org/" target="_blank" rel="noopener noreferrer">
-        Thermal Field Theory
+      <a href="https://www.cambridge.org/highereducation/books/quantum-field-theory/718DD037728FB3745F48A40A6D9A8A1C#overview" target="_blank" rel="noopener noreferrer">
+        Quantum Field Theory
       </a>
     </h3>
     <p>
-      Michel Le Bellac. Cambridge University Press, 1996.
+      Mark Srednicki, 2004.
     </p>
     <p>
-      An introduction to quantum field theory at finite temperature,
-      including thermal Green's functions and the properties of
-      quantum systems in equilibrium.
+      An introductory text to quantum field theory, two out of three parts
+       of which were posted on arXiv. Here is a link to the preprints.
     </p>
+    <a class="text-link" href="https://arxiv.org/abs/hep-th/0409035" target="_blank" rel="noopener noreferrer">
+      Access the preprint  SPIN-ZERO ↗
+    </a><p> </p>
+    <a class="text-link" href="https://arxiv.org/abs/hep-th/0409036" target="_blank" rel="noopener noreferrer">
+      Access the preprint  SPIN-HALF ↗
+    </a><br>
     <span class="tag">Quantum fields</span>
-    <span class="tag">Finite temperature</span>
+    <span class="tag">Symmetry </span>
+    <span class="tag">Spin</span>
   </div>
 </article>
 
 <article class="entry">
   <div class="entry-meta">03 / GENERAL RELATIVITY</div>
   <div>
-    <h3 class="entry-title">General Relativity</h3>
+    <h3 class="entry-title">
+    <a href="https://arxiv.org/abs/gr-qc/9712019" target="_blank" rel="noopener noreferrer">
+        General Relativity
+    </a>
+    </h3>
     <p>
-      Sean Carroll's lecture notes provide a freely accessible
+     Sean Carroll, 1997.
+    </p>
+    <p>
+      <span class="accent"> Sean Carroll's </span> lecture notes provide a freely accessible
       complementary resource for studying spacetime geometry,
       tensors, and gravitational theory.
     </p>
@@ -182,7 +196,7 @@ relativistic fluid dynamics and high-energy physics.
 </article>
 
 <p class="muted">
-  Additional books on fluid mechanics and astrophysical applications
+  Additional books and references
   will be added as the collection develops.
 </p>
 </div>
@@ -190,7 +204,7 @@ relativistic fluid dynamics and high-energy physics.
 
 <section class="section" id="lectures">
 <div class="section-heading">
-<p class="eyebrow">04 / LEARNING</p>
+<p class="eyebrow">03 / LEARNING</p>
 <h2>Courses & lectures</h2>
 </div>
 
@@ -222,17 +236,34 @@ the scope of a single textbook.
 <article class="publication">
   <p class="publication-type">VIDEO LECTURES</p>
   <h3>
-    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-      Recorded lectures on theoretical physics
+    <a href="https://pirsa.org//" target="_blank" rel="noopener noreferrer">
+      PIRSA-Perimeter Institute's video library
     </a>
   </h3>
   <p>
-    Video lectures can be useful for revisiting difficult derivations
-    and exploring subjects such as quantum field theory, general
-    relativity, hydrodynamics, and mathematical physics.
+    The Perimeter Institute has a huge collection of recorded video lectures 
+    and courses that can be useful for brushing up old concepts or learning 
+    entirely new ones across all domains of physics.
   </p>
-  <a class="text-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+  <a class="text-link" href="https://pirsa.org//" target="_blank" rel="noopener noreferrer">
     Browse lectures ↗
+  </a>
+</article>
+
+<article class="publication">
+  <p class="publication-type">PROF. ASHOKE SEN'S RESOURCES</p>
+  <h3>
+    <a href="https://hri.res.in/~sen/" target="_blank" rel="noopener noreferrer">
+      Lectures and Notes
+    </a>
+  </h3>
+  <p>
+    Prof.<span class="accent"> Ashoke Sen</span> has also posted a self contained 
+    collection of his video lectures and notes across various subjects on his 
+    personal website.
+  </p>
+  <a class="text-link" href="https://hri.res.in/~sen/" target="_blank" rel="noopener noreferrer">
+    Visit the Website ↗
   </a>
 </article>
 </div>
@@ -240,7 +271,7 @@ the scope of a single textbook.
 
 <section class="section" id="websites">
 <div class="section-heading">
-<p class="eyebrow">05 / RESEARCH TOOLS</p>
+<p class="eyebrow">04 / RESEARCH TOOLS</p>
 <h2>Useful websites</h2>
 </div>
 
@@ -257,7 +288,7 @@ connections between related publications.
   <div>
     <h3 class="entry-title">
       <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">
-        arXiv
+        arXiv 
       </a>
     </h3>
     <p>
@@ -265,6 +296,8 @@ connections between related publications.
       useful for following developments in high-energy physics,
       nuclear theory, mathematical physics, and general relativity.
     </p>
+    <a class="text-link" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">
+    Visit arXiv↗</a><br>
     <span class="tag">Preprints</span>
     <span class="tag">Open access</span>
   </div>
@@ -275,7 +308,7 @@ connections between related publications.
   <div>
     <h3 class="entry-title">
       <a href="https://inspirehep.net/" target="_blank" rel="noopener noreferrer">
-        INSPIRE-HEP
+        INSPIRE-HEP 
       </a>
     </h3>
     <p>
@@ -284,6 +317,8 @@ connections between related publications.
       and related research in particle physics and theoretical
       high-energy physics.
     </p>
+    <a class="text-link" href="https://inspirehep.net/" target="_blank" rel="noopener noreferrer">
+    Visit INSPIRE-HEP↗</a><br>
     <span class="tag">Bibliography</span>
     <span class="tag">High-energy physics</span>
   </div>
@@ -301,14 +336,14 @@ connections between related publications.
 <p>
 This is a working collection rather than an exhaustive bibliography.
 The resources are selected for their relevance to my interests in
-relativistic hydrodynamics, thermal field theory, and theoretical
-high-energy physics.
+Hydrodynamics, Field theory, and Theoretical
+High-Energy Physics.
 </p>
 
 
 <p>
   I intend to expand the list with more specialised review articles,
-  research papers, lecture notes, and computational resources as
+  research papers, lecture notes and other resources as
   I encounter useful material.
 </p>
 
@@ -321,4 +356,4 @@ high-energy physics.
   Get in touch ↗
 </a>
 </div>
-</section>
+</section> 

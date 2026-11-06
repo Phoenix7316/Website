@@ -1,26 +1,28 @@
 ---
 layout: default
 permalink: /notes/
-section: ACADEMIC NOTEBOOK
+math: true
 ---
 
 <section class="hero">
-  <p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
+<p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="riemann-minimal"
+     style="top: 7%; right: 3%;">
+</div>
+<h1><span class="accent">Notes</span> from the journey.</h1>
 
-  <h1><span class="accent">Notes</span> from the journey.</h1>
-
-  <p class="lede">
-    A growing collection of notes, derivations, explanations, and
-    questions encountered while studying theoretical high-energy physics.
-    This is where I work through ideas, connect mathematical structures
-    with physical intuition, and record things worth revisiting.
-  </p>
-
-  <p>
-    These notes are a work in progress. They are intended as a personal
-    learning resource and a way to share ideas, rather than a substitute
-    for formal textbooks or published research.
-  </p>
+<p class="lede">
+  A growing collection of notes, derivations, explanations, and
+  questions encountered while studying theoretical high-energy physics.
+  This is where I work through ideas, connect mathematical structures
+  with physical intuition, and record things worth revisiting.
+</p>
+<p class="lede">
+  These notes are a work in progress. They are intended as a personal
+  learning resource and a way to share ideas, rather than a substitute
+  for formal textbooks or published research.
+</p>
 </section>
 
 <section class="section">
@@ -28,7 +30,13 @@ section: ACADEMIC NOTEBOOK
     <p class="section-number">01 / NOTES</p>
     <h2>Recent posts</h2>
   </div>
-
+<article class="publication">
+  <p>
+    These <span class="accent">Notes</span> are in no manner intended
+    to be complete and/or substitute to books and classroom teachings. These
+    are just concise summary of my own understanding of the subject. Please 
+    feel free to use them and point out erroneous comment and clarifications if any.
+  </p>
   <div class="section-content">
     {% assign notes = site.posts | sort: "date" | reverse %}
 
@@ -71,6 +79,7 @@ section: ACADEMIC NOTEBOOK
       </p>
     {% endif %}
   </div>
+</article>
 </section>
 
 <section class="section">

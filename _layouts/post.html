@@ -1,0 +1,93 @@
+---
+layout: default
+---
+<article class="post">
+
+  <!-- =====================================
+       POST HEADER
+       ===================================== -->
+
+  <header class="post-header">
+
+    <div class="post-meta">
+
+      {% if page.categories %}
+        <span class="post-category">
+          {{ page.categories | join: " / " | escape }}
+        </span>
+      {% endif %}
+
+      {% if page.date %}
+        <time class="post-date"
+              datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+      {% endif %}
+
+    </div>
+
+    <h1 class="post-title">
+      {{ page.title | escape }}
+    </h1>
+
+    {% if page.subtitle %}
+      <p class="post-subtitle">
+        {{ page.subtitle | escape }}
+      </p>
+    {% elsif page.description %}
+      <p class="post-subtitle">
+        {{ page.description | escape }}
+      </p>
+    {% endif %}
+
+    {% if page.author %}
+      <p class="post-author">
+        By {{ page.author | escape }}
+      </p>
+    {% endif %}
+
+    <div class="post-divider"></div>
+
+  </header>
+
+
+  <!-- =====================================
+       ARTICLE BODY
+       ===================================== -->
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+
+  <!-- =====================================
+       REFERENCES
+       ===================================== -->
+
+  {% if page.references %}
+    <section class="post-references">
+
+      <h2>References</h2>
+
+      {{ page.references | markdownify }}
+
+    </section>
+  {% endif %}
+
+
+  <!-- =====================================
+       POST FOOTER
+       ===================================== -->
+
+  <footer class="post-footer">
+
+    <div class="post-divider"></div>
+
+    <a href="{{ '/notes/' | relative_url }}"
+       class="post-back">
+      &larr; Back to all posts
+    </a>
+
+  </footer>
+
+</article>

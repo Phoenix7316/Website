@@ -1,12 +1,18 @@
 ---
 layout: default
 permalink: /cv/
+math: true
 ---
 
 <section class="hero">
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="mobius"
+     style="top: 4%; right: 5%;">
+</div>
 <p class="eyebrow">03 / CURRICULUM VITAE</p>
 
 <h1>Academic background & <span class="accent">research.</span></h1>
+
 
 <p class="lede">
 An overview of my academic training, research interests, scientific
@@ -42,13 +48,13 @@ relativistic hydrodynamics.
 
 
 <article class="entry">
-  <div class="entry-meta">202X – PRESENT</div>
+  <div class="entry-meta">2025 – PRESENT</div>
   <div>
-    <h3 class="entry-title">Graduate degree in [Field]</h3>
-    <p><strong>[University Name]</strong></p>
+    <h3 class="entry-title">Ph.D. in Theoretical High Energy Physics</h3>
+    <p><strong>[Saha Institute of Nuclear Physics]</strong></p>
     <p>
-      Department of [Department Name]. Relevant coursework, research
-      training, and academic activities related to theoretical physics.
+      Relevant coursework, research training, 
+      discussions and seminars related to theoretical physics.
     </p>
     <span class="tag">Graduate studies</span>
     <span class="tag">Theoretical physics</span>
@@ -56,23 +62,32 @@ relativistic hydrodynamics.
 </article>
 
 <article class="entry">
-  <div class="entry-meta">20XX – 20XX</div>
+  <div class="entry-meta">2020 – 2023</div>
   <div>
-    <h3 class="entry-title">Undergraduate degree in [Field]</h3>
-    <p><strong>[University Name]</strong></p>
+    <h3 class="entry-title">Masters in Physics</h3>
+    <p><strong>[Indian Institute of Technology, Kanpur]</strong></p>
     <p>
-      Academic training in the fundamental principles of physics,
-      mathematical methods, and related scientific disciplines.
+      Advanced academic training in the fundamental principles of
+      physics and mathematics, and relevent scientific disciplines.
     </p>
-    <span class="tag">Undergraduate studies</span>
-    <span class="tag">Mathematical methods</span>
+    <span class="tag">Postgraduate studies</span>
+     <span class="tag">Physics</span>
   </div>
 </article>
 
-<p class="muted">
-  Replace the placeholders with your actual degrees, institutions,
-  dates, and relevant academic details.
-</p>
+<article class="entry">
+  <div class="entry-meta">2017 – 2020</div>
+  <div>
+    <h3 class="entry-title">Undergraduate degree in Physics</h3>
+    <p><strong>[Banaras Hindu University]</strong></p>
+    <p>
+      Basic training in the fundamental principles of physics,
+      chemistry and mathematics, with hands on laboratory experience 
+      as application of classroom learnings.
+    </p>
+    <span class="tag">Undergraduate studies</span>
+  </div>
+</article>
 </div>
 </section>
 
@@ -129,7 +144,9 @@ matter.
 <p class="eyebrow">04 / PUBLICATIONS</p>
 <h2>Research outputs</h2>
 </div>
-
+<span class="math-float medium" style="top: 48%; right: 2%;">
+    $d^2 = 0$
+  </span>
 <div class="section-content">
 <p>
 A record of research publications, preprints, conference
@@ -181,10 +198,23 @@ contributions, and other scholarly outputs.
 
 <div class="section-content">
 <article class="entry">
-<div class="entry-meta">YEAR</div>
+<div class="entry-meta">2023</div>
 <div>
-<h3 class="entry-title">[Course or Teaching Role]</h3>
-<p><strong>[Institution Name]</strong></p>
+<h3 class="entry-title">Teaching Assistant - Introduction to Electrodynamics </h3>
+<p><strong>[Indian Institute of Technology, Kanpur]</strong></p>
+<p>
+Describe your responsibilities, such as conducting tutorials,
+assisting with laboratory sessions, preparing course materials,
+evaluating assignments, or mentoring students.
+</p>
+</div>
+</article>
+
+<article class="entry">
+<div class="entry-meta">2022</div>
+<div>
+<h3 class="entry-title">Teaching Assistant - B.Tech. Physics Laboratory </h3>
+<p><strong>[Indian Institute of Technology, Kanpur]</strong></p>
 <p>
 Describe your responsibilities, such as conducting tutorials,
 assisting with laboratory sessions, preparing course materials,
@@ -296,14 +326,14 @@ algebra, data analysis, or scientific visualization.
 
 <div class="section-content">
 <article class="entry">
-<div class="entry-meta">YEAR</div>
+<div class="entry-meta">2022 - 2023</div>
 <div>
-<h3 class="entry-title">[Academic or Outreach Activity]</h3>
-<p><strong>[Institution or Organization]</strong></p>
+<h3 class="entry-title">Academic Outreach </h3>
+<p><strong>[ Mentor @ Siksha Sopan]</strong></p>
 <p>
-Describe contributions to seminar organization, student
-communities, peer mentoring, scientific outreach, workshops,
-or other academic activities.
+Voluntary contribution as a mentor to high scool students interested in physics.
+Helping them through concepts and exercises by inviting them to engage
+in discussion centric learning.
 </p>
 </div>
 </article>

@@ -1,13 +1,19 @@
 ---
 layout: default
 permalink: /research/
+math: true
 ---
 
 <section class="hero">
 <p class="eyebrow">01 / RESEARCH</p>
-
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="riemann-minimal"
+     style="top: 4%; right: 1%;">
+</div>
 <h1>From quantum fields to <span class="accent">collective matter.</span></h1>
-
+ <span class="math-float red" style="top: 2%; right: 12%;">
+      $G_{\mu\nu} = R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R$
+    </span>
 <p class="lede">
 Exploring the theoretical foundations of hot, strongly interacting matter
 through quantum field theory, relativistic hydrodynamics, and the
@@ -22,6 +28,9 @@ microscopic origins of transport phenomena.
 </section>
 
 <section class="section" id="research-areas">
+<span class="math-float red" style="top: 25%; left: -5%;">
+      $T^a=de^a+\omega^{a}_{~\ b}\wedge e^b$
+    </span>
 <div class="section-heading">
 <p class="eyebrow">02 / RESEARCH AREAS</p>
 <h2>Questions across scales</h2>
@@ -29,8 +38,8 @@ microscopic origins of transport phenomena.
 
 <div class="section-content">
 <p>
-My research interests lie at the intersection of <strong>quantum field
-theory, thermal physics, and relativistic many-body dynamics.</strong>
+My research interests lie at the intersection of <strong>field
+theory, and hydrodynamics.</strong>
 I am interested in how microscopic quantum interactions give rise to
 macroscopic phenomena, particularly the collective evolution and
 dissipative behaviour of strongly interacting matter.
@@ -61,7 +70,6 @@ dissipative behaviour of strongly interacting matter.
       away from zero-temperature conditions.
     </p>
     <span class="tag">Thermal Green's functions</span>
-    <span class="tag">Spectral analysis</span>
     <span class="tag">Linear response</span>
   </div>
 </article>

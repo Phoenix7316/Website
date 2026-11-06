@@ -2,24 +2,33 @@
 <html lang="en">
 
 <head>
-<!-- Umami Analytics -->
+  <!-- Umami Analytics -->
+  
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
 
-<link rel="stylesheet"
-      href="/grad-site/assets/css/style.css">
-
-  <title>Sharad Shukla</title>
+  <title>
+    
+    Sharad Shukla
+  </title>
 
   <meta name="description"
         content="Research, publications, projects, and academic ideas.">
 
   <meta name="theme-color" content="#090D1F">
 
-  <link rel="stylesheet"
-        href="/grad-site/assets/css/style.css">
+    <!-- Main stylesheet -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/style.css">
+        <!-- Main stylesheet -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/riemannsurface.css">
+
+        <!-- Existing mathematical background animation -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/mathbg.css">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/grad-site/feed.xml" title="Sharad Shukla" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -40,14 +49,18 @@
 <!-- End Jekyll SEO tag -->
 
 
+  <!-- MathJax: only load on pages that need mathematics -->
   
 </head>
 
 <body>
+
+  <!-- Skip navigation -->
   <a class="skip-link" href="#main">
     Skip to content
   </a>
 
+  <!-- Site header -->
   <header class="site-header">
     <a class="wordmark" href="/grad-site/">
       <span class="wordmark-mark" aria-hidden="true">✦</span>
@@ -59,22 +72,31 @@
   <a href="/grad-site/publications/">Publications</a>
   <a href="/grad-site/cv/">CV</a>
   <a href="/grad-site/resources/">Resources</a>
-  <a href="/grad-site/about/">About</a>
+  <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
   <a href="/grad-site/notes/">Notes</a>
 </nav>
 
   </header>
 
+  <!-- Main content -->
   <main id="main" class="site-main">
+
+    <!-- Page title and optional illustration -->
     
 
-    <section class="hero">
+    <!-- Article content -->
+    <article class="page-content">
+      <section class="hero">
+  <div class="riemannsurface riemannsurface--decorative"
+     data-surface="klein-bottle"
+     style="top: 10%; right: 4%;">
+  </div>
   <p class="eyebrow">ACADEMIC PROFILE / 2026</p>
-
   <h2>Hey, fellow observer.</h2>
   <h3>Welcome to my little corner of the universe!</h3>
 
+  
   <p class="lede">
     I'm <span class="accent">Sharad Shukla</span>, a graduate student
     exploring the fascinating world of
@@ -353,10 +375,14 @@
       </a>
     </div>
   </div>
+  
 </section>
+
+    </article>
 
   </main>
 
+  <!-- Site footer -->
   <footer class="site-footer">
     <span>
       © 2026
@@ -369,5 +395,11 @@
       </a>
     </nav>
   </footer>
+<!-- Existing background animation: preserved -->
+  <!-- <script defer
+    src="/grad-site/assets/js/mathbg.js">
+  </script> -->
+   <!-- Riemann surface animation: preserved -->
+  <script src="/grad-site/assets/js/riemannsurface.js" defer></script>
 </body>
 </html>

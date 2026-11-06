@@ -2,24 +2,33 @@
 <html lang="en">
 
 <head>
-<!-- Umami Analytics -->
+  <!-- Umami Analytics -->
+  
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
 
-<link rel="stylesheet"
-      href="/grad-site/assets/css/style.css">
-
-  <title>Sharad Shukla</title>
+  <title>
+    
+    Sharad Shukla
+  </title>
 
   <meta name="description"
         content="Research, publications, projects, and academic ideas.">
 
   <meta name="theme-color" content="#090D1F">
 
-  <link rel="stylesheet"
-        href="/grad-site/assets/css/style.css">
+    <!-- Main stylesheet -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/style.css">
+        <!-- Main stylesheet -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/riemannsurface.css">
+
+        <!-- Existing mathematical background animation -->
+      <link rel="stylesheet"
+            href="/grad-site/assets/css/mathbg.css">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/grad-site/feed.xml" title="Sharad Shukla" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -40,14 +49,41 @@
 <!-- End Jekyll SEO tag -->
 
 
+  <!-- MathJax: only load on pages that need mathematics -->
+  
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['\\[', '\\]'], ['$$', '$$']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: [
+            'script', 'noscript', 'style',
+            'textarea', 'pre', 'code'
+          ]
+        },
+        chtml: {
+          scale: 1.0
+        }
+      };
+    </script>
+
+    <script defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
   
 </head>
 
 <body>
+
+  <!-- Skip navigation -->
   <a class="skip-link" href="#main">
     Skip to content
   </a>
 
+  <!-- Site header -->
   <header class="site-header">
     <a class="wordmark" href="/grad-site/">
       <span class="wordmark-mark" aria-hidden="true">✦</span>
@@ -59,21 +95,29 @@
   <a href="/grad-site/publications/">Publications</a>
   <a href="/grad-site/cv/">CV</a>
   <a href="/grad-site/resources/">Resources</a>
-  <a href="/grad-site/about/">About</a>
+  <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
   <a href="/grad-site/notes/">Notes</a>
 </nav>
 
   </header>
 
+  <!-- Main content -->
   <main id="main" class="site-main">
+
+    <!-- Page title and optional illustration -->
     
 
-    <section class="hero">
+    <!-- Article content -->
+    <article class="page-content">
+      <section class="hero">
 <p class="eyebrow">01 / RESEARCH</p>
-
+<div class="riemannsurface riemannsurface--decorative" data-surface="riemann-minimal" style="top: 4%; right: 1%;">
+</div>
 <h1>From quantum fields to <span class="accent">collective matter.</span></h1>
-
+ <span class="math-float red" style="top: 2%; right: 12%;">
+      $G_{\mu\nu} = R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R$
+    </span>
 <p class="lede">
 Exploring the theoretical foundations of hot, strongly interacting matter
 through quantum field theory, relativistic hydrodynamics, and the
@@ -88,6 +132,9 @@ microscopic origins of transport phenomena.
 </section>
 
 <section class="section" id="research-areas">
+<span class="math-float red" style="top: 25%; left: -5%;">
+      $T^a=de^a+\omega^{a}_{~\ b}\wedge e^b$
+    </span>
 <div class="section-heading">
 <p class="eyebrow">02 / RESEARCH AREAS</p>
 <h2>Questions across scales</h2>
@@ -95,8 +142,8 @@ microscopic origins of transport phenomena.
 
 <div class="section-content">
 <p>
-My research interests lie at the intersection of <strong>quantum field
-theory, thermal physics, and relativistic many-body dynamics.</strong>
+My research interests lie at the intersection of <strong>field
+theory, and hydrodynamics.</strong>
 I am interested in how microscopic quantum interactions give rise to
 macroscopic phenomena, particularly the collective evolution and
 dissipative behaviour of strongly interacting matter.
@@ -127,7 +174,6 @@ dissipative behaviour of strongly interacting matter.
       away from zero-temperature conditions.
     </p>
     <span class="tag">Thermal Green's functions</span>
-    <span class="tag">Spectral analysis</span>
     <span class="tag">Linear response</span>
   </div>
 </article>
@@ -518,8 +564,11 @@ and relativistic hydrodynamics.
 </div>
 </section>
 
+    </article>
+
   </main>
 
+  <!-- Site footer -->
   <footer class="site-footer">
     <span>
       © 2026
@@ -532,5 +581,11 @@ and relativistic hydrodynamics.
       </a>
     </nav>
   </footer>
+<!-- Existing background animation: preserved -->
+  <!-- <script defer
+    src="/grad-site/assets/js/mathbg.js">
+  </script> -->
+   <!-- Riemann surface animation: preserved -->
+  <script src="/grad-site/assets/js/riemannsurface.js" defer></script>
 </body>
 </html>

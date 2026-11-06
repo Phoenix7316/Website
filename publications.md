@@ -1,11 +1,15 @@
 ---
 layout: default
 permalink: /publications/
+math: true
 ---
 
 <section class="hero">
 <p class="eyebrow">02 /RESEARCH · WRITING · PRESENTATIONS</p>
-
+<div class="riemannsurface riemannsurface--decorative"
+     data-surface="cross-cap"
+     style="top: 7%; right: 3%;">
+</div>
 <h1>Ideas into<br><span class="accent">understanding.</span></h1>
 
 <p class="lede">
@@ -166,25 +170,5 @@ publications, manuscripts, thesis, and academic presentations.
     methodology, and key results.
   </p>
 </article>
-</div>
-</section>
-
-<section class="section">
-<div class="section-heading">
-<p class="section-number">05 / CONNECT</p>
-<h2>Research is ongoing.</h2>
-</div>
-
-<div class="section-content">
-<p>
-Interested in my work, discussing theoretical physics, or
-exploring potential collaborations? I welcome conversations
-around shared research interests and open questions.
-</p>
-
-
-<p>
- <a class="text-link" href="{{ '/contact/' | relative_url }}">Get in touch ↗</a>
-</p>
 </div>
 </section>

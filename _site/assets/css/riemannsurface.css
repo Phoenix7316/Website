@@ -21,8 +21,12 @@
   /* Appearance */
 
   --riemann-opacity: 0.48;
-  --riemann-mesh: #706e67;
-  --riemann-accent: #d52b1e;
+
+  /* Neutral wireframe mesh */
+  --riemann-mesh: var(--muted);
+
+  /* Automatically follows the active theme */
+  --riemann-accent: var(--red);
 
   /* Surface depth */
 
@@ -90,13 +94,16 @@ body {
 
 /* =========================================================
    04. SURFACE FILL
+   Theme-aware SVG surface shading
    ========================================================= */
 
-.riemannsurface--decorative .riemannsurface-fill polygon {
-  fill: var(--math-ink, #191919) !important;
-  fill-opacity: var(--riemann-fill-opacity);
-
-  stroke: none;
+    .riemannsurface--decorative .riemannsurface-fill,
+    .riemannsurface--decorative .riemannsurface-fill polygon,
+    .riemannsurface--decorative .riemannsurface-fill path,
+    .riemannsurface--decorative .riemannsurface-fill ellipse {
+    fill: var(--ink) !important;
+    fill-opacity: var(--riemann-fill-opacity) !important;
+    stroke: none !important;
 }
 
 
@@ -104,9 +111,9 @@ body {
    05. WIREFRAME MESH
    ========================================================= */
 
-.riemannsurface--decorative .riemannsurface-mesh,
-.riemannsurface--decorative .riemannsurface-mesh path {
-  fill: none;
+   .riemannsurface--decorative .riemannsurface-mesh,
+   .riemannsurface--decorative .riemannsurface-mesh path {
+   fill: none;
 
   stroke: var(--riemann-mesh) !important;
   stroke-width: var(--riemann-mesh-width) !important;
@@ -121,9 +128,9 @@ body {
    06. ACCENT CURVES
    ========================================================= */
 
-.riemannsurface--decorative .riemannsurface-accent,
-.riemannsurface--decorative .riemannsurface-accent path {
-  fill: none;
+    .riemannsurface--decorative .riemannsurface-accent,
+    .riemannsurface--decorative .riemannsurface-accent path {
+    fill: none;
 
   stroke: var(--riemann-accent) !important;
   stroke-width: var(--riemann-accent-width) !important;

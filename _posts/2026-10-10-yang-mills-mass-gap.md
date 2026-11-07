@@ -1,25 +1,27 @@
 ---
-layout: default
-title: "The Yang–Mills Mass Gap Problem"
+layout: post
+title: "The Yang–Mills Mass-Gap Problem"
+subtitle: "Why this Buzz?"
+author: Sharad
 date: 2026-10-10
+math: true
 categories: notes
 tags:
   - yang-mills
   - mass-gap
   - gauge-theory
-excerpt: "A mathematical introduction to Yang–Mills theory, dimensional transmutation, and the mass gap problem."
+
 ---
 
 <p class="eyebrow">RESEARCH NOTE / 001</p>
 
-# The Yang–Mills Mass Gap Problem
+<!-- # The Yang–Mills Mass Gap Problem
 
 *How can a quantum field theory built from classically massless gauge fields develop a positive energy scale?*
 
 **Field:** Mathematical Physics  
 **Status:** Open mathematical problem
-
----
+ -->
 
 ## 01 / Introduction
 
@@ -33,7 +35,7 @@ The central question is:
 
 ## 02 / The Yang–Mills field
 
-Let $G$ be a compact, simple gauge group, and let $A_\mu$ denote its gauge field.
+>Let $G$ be a compact, simple gauge group, and let $A_\mu$ denote its gauge field.
 
 The field strength is
 

@@ -1,93 +1,325 @@
 ---
-layout: default
+layout: null
 ---
-<article class="post">
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
-  <!-- =====================================
-       POST HEADER
-       ===================================== -->
+<head>
 
-  <header class="post-header">
+  <!-- =========================================
+       0. THEME INITIALIZATION
+       Apply saved/system preference before render
+       ========================================= -->
 
-    <div class="post-meta">
+  <script>
+  (() => {
+    const root = document.documentElement;
 
-      {% if page.categories %}
-        <span class="post-category">
-          {{ page.categories | join: " / " | escape }}
-        </span>
-      {% endif %}
+    let savedTheme = null;
+    let savedPalette = null;
 
-      {% if page.date %}
-        <time class="post-date"
-              datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%B %-d, %Y" }}
-        </time>
-      {% endif %}
+    try {
+      savedTheme = localStorage.getItem("theme");
+      savedPalette = localStorage.getItem("darkPalette");
+    } catch (error) {}
 
-    </div>
+    const systemDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    <h1 class="post-title">
-      {{ page.title | escape }}
-    </h1>
+    root.dataset.theme =
+      savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : (systemDark ? "dark" : "light");
 
-    {% if page.subtitle %}
-      <p class="post-subtitle">
-        {{ page.subtitle | escape }}
-      </p>
-    {% elsif page.description %}
-      <p class="post-subtitle">
-        {{ page.description | escape }}
-      </p>
-    {% endif %}
+    root.dataset.darkPalette = savedPalette || "aubergine";
+  })();
+</script>
 
-    {% if page.author %}
-      <p class="post-author">
-        By {{ page.author | escape }}
-      </p>
-    {% endif %}
 
-    <div class="post-divider"></div>
+  <!-- =========================================
+       1. DOCUMENT METADATA
+       ========================================= -->
+
+  <!-- Umami Analytics -->
+  {% if jekyll.environment == "production" %}
+    <script async
+      src="https://cloud.umami.is/script.js"
+      data-website-id="phoenix7316.github.io/Website/">
+    </script>
+  {% endif %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>
+    {{ page.title | escape }} —
+    {{ site.title | escape }}
+  </title>
+
+  <meta name="description"
+        content="{{ page.description | default: site.description | escape }}">
+
+  <meta name="theme-color" content="#f5f3ed">
+
+
+  <!-- =========================================
+       2. STYLESHEETS
+       ========================================= -->
+
+  <!-- Main site stylesheet -->
+  <link rel="stylesheet"
+        href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Riemann surface illustrations -->
+  <link rel="stylesheet"
+        href="{{ '/assets/css/riemannsurface.css' | relative_url }}">
+
+  <!-- Existing mathematical background animation -->
+  <link rel="stylesheet"
+        href="{{ '/assets/css/mathbg.css' | relative_url }}">
+
+  {% feed_meta %}
+  {% seo %}
+
+
+  <!-- =========================================
+       3. MATHJAX
+       ========================================= -->
+
+  {% if page.math %}
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ],
+          displayMath: [
+            ['\\[', '\\]'],
+            ['$$', '$$']
+          ],
+          processEscapes: true
+        },
+
+        options: {
+          skipHtmlTags: [
+            'script', 'noscript', 'style',
+            'textarea', 'pre', 'code'
+          ]
+        },
+
+        chtml: {
+          scale: 1.0
+        }
+      };
+    </script>
+
+    <script defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  {% endif %}
+
+</head>
+
+
+<body>
+
+  <!-- =========================================
+       4. SKIP NAVIGATION
+       ========================================= -->
+
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+
+  <!-- =========================================
+       5. SITE HEADER AND NAVIGATION
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a class="wordmark" href="{{ '/' | relative_url }}">
+      <span class="wordmark-mark" aria-hidden="true">✦</span>
+      <span>{{ site.title | escape }}</span>
+    </a>
+
+    {% include nav.html %}
 
   </header>
 
 
-  <!-- =====================================
-       ARTICLE BODY
-       ===================================== -->
+  <!-- =========================================
+       6. MAIN CONTENT
+       ========================================= -->
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+  <main id="main" class="site-main">
 
+    <article class="post">
 
-  <!-- =====================================
-       REFERENCES
-       ===================================== -->
+      <!-- =====================================
+           6A. POST LAYOUT GRID
+           ===================================== -->
 
-  {% if page.references %}
-    <section class="post-references">
-
-      <h2>References</h2>
-
-      {{ page.references | markdownify }}
-
-    </section>
-  {% endif %}
+      <div class="post-layout">
 
 
-  <!-- =====================================
-       POST FOOTER
-       ===================================== -->
+        <!-- =================================
+             6B. POST HEADER
+             ================================= -->
 
-  <footer class="post-footer">
+        <header class="post-header">
 
-    <div class="post-divider"></div>
+          <div class="post-meta">
 
-    <a href="{{ '/notes/' | relative_url }}"
-       class="post-back">
-      &larr; Back to all posts
-    </a>
+            {% if page.categories %}
+              <span class="post-category">
+                {{ page.categories | join: " / " | escape }}
+              </span>
+            {% endif %}
+
+            {% if page.date %}
+              <time class="post-date"
+                    datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %-d, %Y" }}
+              </time>
+            {% endif %}
+
+          </div>
+
+          <h1 class="post-title">
+            {{ page.title | escape }}
+          </h1>
+
+          {% if page.subtitle %}
+            <p class="post-subtitle">
+              {{ page.subtitle | escape }}
+            </p>
+          {% elsif page.description %}
+            <p class="post-subtitle">
+              {{ page.description | escape }}
+            </p>
+          {% endif %}
+
+          {% if page.author %}
+            <p class="post-author">
+              By {{ page.author | escape }}
+            </p>
+          {% endif %}
+
+          <div class="post-divider"></div>
+
+        </header>
+
+
+        <!-- =================================
+             6C. LEFT-HAND TABLE OF CONTENTS
+             ================================= -->
+
+        <aside class="post-toc"
+               id="post-toc"
+               aria-label="Table of contents">
+
+          <p class="post-toc-heading">
+            CONTENTS
+          </p>
+
+          <nav aria-label="Article sections">
+            <ul id="post-toc-list"></ul>
+          </nav>
+
+        </aside>
+
+
+        <!-- =================================
+             6D. MAIN ARTICLE BODY
+             ================================= -->
+
+        <div class="post-content" id="post-content">
+
+          {{ content }}
+
+        </div>
+
+      </div>
+      <!-- END POST LAYOUT GRID -->
+
+
+      <!-- =====================================
+           6E. REFERENCES
+           ===================================== -->
+
+      {% if page.references %}
+        <section class="post-references">
+
+          <h2>References</h2>
+
+          {{ page.references | markdownify }}
+
+        </section>
+      {% endif %}
+
+
+      <!-- =====================================
+           6F. POST FOOTER
+           ===================================== -->
+
+      <footer class="post-footer">
+
+        <div class="post-divider"></div>
+
+        <a href="{{ '/notes/' | relative_url }}"
+           class="post-back">
+          &larr; Back to all posts
+        </a>
+
+      </footer>
+
+    </article>
+
+  </main>
+
+
+  <!-- =========================================
+       7. SITE FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <span>
+      © {{ site.time | date: "%Y" }}
+      {{ site.title | escape }}
+    </span>
+
+    <nav aria-label="Footer navigation">
+      <a href="{{ '/about/' | relative_url }}">
+        About &amp; contact ↗
+      </a>
+    </nav>
 
   </footer>
 
-</article>
+
+  <!-- =========================================
+       8. JAVASCRIPT
+       ========================================= -->
+
+  <!-- Shared light/dark theme controller -->
+  <script defer
+    src="{{ '/assets/js/theme.js' | relative_url }}">
+  </script>
+
+  <!-- Riemann surface animation -->
+  <script defer
+    src="{{ '/assets/js/riemannsurface.js' | relative_url }}">
+  </script>
+
+  <!-- Automatic article table of contents -->
+  <script defer
+    src="{{ '/assets/js/post-toc.js' | relative_url }}">
+  </script>
+
+</body>
+</html>

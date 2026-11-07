@@ -162,9 +162,7 @@
       ]
     },
 
-    // 12. Riemann-style periodic minimal-surface study.
-    // An illustrative periodic graph, not an exact
-    // parametrisation of Riemann's minimal examples.
+    // 12. Riemann-style periodic minimal-surface study
     "riemann-minimal": {
       u: [-1.35, 1.35],
       v: [-1.35, 1.35],
@@ -180,8 +178,7 @@
       }
     },
 
-    // 13. Costa-inspired minimal-surface study.
-    // A visual approximation, not an exact Costa surface.
+    // 13. Costa-inspired minimal-surface study
     "costa": {
       u: [0, TAU],
       v: [-1.15, 1.15],
@@ -232,14 +229,17 @@
     vSegments: 10,
     curveSamples: 90,
 
-    meshColour: "#000000",
-    accentColour: "#d52b1e",
+    // Bright neutral wiremesh
+    meshColour: "#D0D0D0",
+    meshWidth: "1.0",
+    meshOpacity: "0.95",
 
-    meshWidth: "0.65",
-    accentWidth: "1.15",
+    // Theme-aware accent curve
+    accentColour: "var(--red)",
+    accentWidth: "1.5",
 
-    meshOpacity: "0.62",
-    surfaceOpacity: 0.3,
+    // Theme-aware surface shading
+    surfaceOpacity: 0.30,
 
     rotationSpeed: 0.17
   };
@@ -340,6 +340,7 @@
     svg.style.left = "50%";
     svg.style.top = "50%";
     svg.style.transform = "translate(-50%, -50%)";
+
     const fillGroup = svgElement("g");
     const meshGroup = svgElement("g");
     const accentGroup = svgElement("g");
@@ -396,7 +397,7 @@
     }
 
     // --------------------------------------------------
-    // WIRE-FRAME CURVES
+    // WIREFRAME CURVES
     // --------------------------------------------------
 
     const meshCurves = [];
@@ -429,7 +430,7 @@
       });
     }
 
-    // Red central curve.
+    // Accent-coloured central curve.
     const accentPath = createPath(
       accentGroup,
       SETTINGS.accentColour,
@@ -445,8 +446,8 @@
       const pattern = Math.sin(u * 1.4 + v * 1.1);
 
       return pattern > 0.15
-        ? `rgba(213,43,30,${SETTINGS.surfaceOpacity})`
-        : `rgba(112,110,103,${SETTINGS.surfaceOpacity})`;
+        ? "var(--red)"
+        : "var(--riemann-neutral)";
     }
 
     // --------------------------------------------------
@@ -479,7 +480,10 @@
           polygon: cell.polygon,
           points,
           depth,
-          colour: cellColour((u0 + u1) / 2, (v0 + v1) / 2)
+          colour: cellColour(
+            (u0 + u1) / 2,
+            (v0 + v1) / 2
+          )
         });
       });
 
@@ -495,6 +499,11 @@
         );
 
         cell.polygon.setAttribute("fill", cell.colour);
+
+        cell.polygon.setAttribute(
+          "fill-opacity",
+          SETTINGS.surfaceOpacity
+        );
 
         // Reordering SVG elements establishes draw order.
         fillGroup.appendChild(cell.polygon);
@@ -616,7 +625,6 @@
       cleanups.push(createSurface(element));
     });
 
-  
   window.addEventListener("pagehide", () => {
     cleanups.forEach(stop => stop());
   });

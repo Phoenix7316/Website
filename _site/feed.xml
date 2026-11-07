@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/grad-site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/grad-site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-07T02:24:40+05:30</updated><id>http://localhost:4000/grad-site/feed.xml</id><title type="html">Sharad Shukla</title><subtitle>Research, publications, projects, and academic ideas.</subtitle><entry><title type="html">A First Look at topological Field Theory</title><link href="http://localhost:4000/grad-site/notes/2026/11/07/test-post/" rel="alternate" type="text/html" title="A First Look at topological Field Theory" /><published>2026-11-07T00:00:00+05:30</published><updated>2026-11-07T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/11/07/test-post</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/11/07/test-post/"><![CDATA[<aticle class="publication">
-<p class="eyebrow">RESEARCH NOTE / 002</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/grad-site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/grad-site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-08T00:16:44+05:30</updated><id>http://localhost:4000/grad-site/feed.xml</id><title type="html">Sharad Shukla</title><subtitle>Research, publications, projects, and academic ideas.</subtitle><entry><title type="html">A First Look at topological Field Theory</title><link href="http://localhost:4000/grad-site/notes/2026/11/07/test-post/" rel="alternate" type="text/html" title="A First Look at topological Field Theory" /><published>2026-11-07T00:00:00+05:30</published><updated>2026-11-07T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/11/07/test-post</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/11/07/test-post/"><![CDATA[<p class="eyebrow">RESEARCH NOTE / 002</p>
 
-## Why quantum field theory?
+<h2 id="why-quantum-field-theory">Why quantum field theory?</h2>
 
-Quantum field theory (QFT) provides a framework for describing
+<p>Quantum field theory (QFT) provides a framework for describing
 quantum fields and their interactions, combining quantum mechanics
-with the principles of special relativity.
+with the principles of special relativity.</p>
 
-Rather than treating particles as the fundamental starting point,
-QFT describes them as excitations associated with underlying fields.
+<p>Rather than treating particles as the fundamental starting point,
+QFT describes them as excitations associated with underlying fields.</p>
 
-## The central idea
+<h2 id="the-central-idea">The central idea</h2>
 
-A useful way to begin studying QFT is to ask:
+<p>A useful way to begin studying QFT is to ask:</p>
 
-- What is a field, and how does it differ from a particle?
-- Why do relativistic theories require a field-theoretic description?
-- How do symmetries constrain physical interactions?
+<ul>
+  <li>What is a field, and how does it differ from a particle?</li>
+  <li>Why do relativistic theories require a field-theoretic description?</li>
+  <li>How do symmetries constrain physical interactions?</li>
+</ul>
 
-These questions lead naturally to the mathematical structures
-used to construct and study quantum field theories.
+<p>These questions lead naturally to the mathematical structures
+used to construct and study quantum field theories.</p>
 
-## Further study
+<h2 id="further-study">Further study</h2>
 
-This note is an introduction to the subject. More detailed notes
+<p>This note is an introduction to the subject. More detailed notes
 and derivations can be added as the topic is studied further.
-&lt;/article&gt;
-</aticle>]]></content><author><name></name></author><category term="notes" /><summary type="html"><![CDATA[Initial thoughts on fields, particles, and the framework connecting quantum mechanics with special relativity.]]></summary></entry><entry><title type="html">A First Look at Quantum Field Theory</title><link href="http://localhost:4000/grad-site/notes/2026/10/19/An-introduction-to-QFT/" rel="alternate" type="text/html" title="A First Look at Quantum Field Theory" /><published>2026-10-19T00:00:00+05:30</published><updated>2026-10-19T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/10/19/An%20introduction%20to%20QFT</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/10/19/An-introduction-to-QFT/"><![CDATA[<p class="eyebrow">RESEARCH NOTE / 002</p>
+&lt;/article&gt;</p>]]></content><author><name></name></author><category term="notes" /><summary type="html"><![CDATA[Initial thoughts on fields, particles, and the framework connecting quantum mechanics with special relativity.]]></summary></entry><entry><title type="html">A First Look at Quantum Field Theory</title><link href="http://localhost:4000/grad-site/notes/2026/10/19/An-introduction-to-QFT/" rel="alternate" type="text/html" title="A First Look at Quantum Field Theory" /><published>2026-10-19T00:00:00+05:30</published><updated>2026-10-19T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/10/19/An%20introduction%20to%20QFT</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/10/19/An-introduction-to-QFT/"><![CDATA[<p class="eyebrow">RESEARCH NOTE / 002</p>
 
 <h2 id="why-quantum-field-theory">Why quantum field theory?</h2>
 
@@ -80,16 +80,15 @@ used to construct and study quantum field theories.</p>
 <h2 id="further-study">Further study</h2>
 
 <p>This note is an introduction to the subject. More detailed notes
-and derivations can be added as the topic is studied further.</p>]]></content><author><name></name></author><category term="notes" /><summary type="html"><![CDATA[Initial thoughts on fields, particles, and the framework connecting quantum mechanics with special relativity.]]></summary></entry><entry><title type="html">The Yang–Mills Mass Gap Problem</title><link href="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/" rel="alternate" type="text/html" title="The Yang–Mills Mass Gap Problem" /><published>2026-10-10T00:00:00+05:30</published><updated>2026-10-10T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/"><![CDATA[<p class="eyebrow">RESEARCH NOTE / 001</p>
+and derivations can be added as the topic is studied further.</p>]]></content><author><name></name></author><category term="notes" /><summary type="html"><![CDATA[Initial thoughts on fields, particles, and the framework connecting quantum mechanics with special relativity.]]></summary></entry><entry><title type="html">The Yang–Mills Mass-Gap Problem</title><link href="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/" rel="alternate" type="text/html" title="The Yang–Mills Mass-Gap Problem" /><published>2026-10-10T00:00:00+05:30</published><updated>2026-10-10T00:00:00+05:30</updated><id>http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap</id><content type="html" xml:base="http://localhost:4000/grad-site/notes/2026/10/10/yang-mills-mass-gap/"><![CDATA[<p class="eyebrow">RESEARCH NOTE / 001</p>
 
-<h1 id="the-yangmills-mass-gap-problem">The Yang–Mills Mass Gap Problem</h1>
+<!-- # The Yang–Mills Mass Gap Problem
 
-<p><em>How can a quantum field theory built from classically massless gauge fields develop a positive energy scale?</em></p>
+*How can a quantum field theory built from classically massless gauge fields develop a positive energy scale?*
 
-<p><strong>Field:</strong> Mathematical Physics<br />
-<strong>Status:</strong> Open mathematical problem</p>
-
-<hr />
+**Field:** Mathematical Physics  
+**Status:** Open mathematical problem
+ -->
 
 <h2 id="01--introduction">01 / Introduction</h2>
 
@@ -105,7 +104,9 @@ and derivations can be added as the topic is studied further.</p>]]></content><a
 
 <h2 id="02--the-yangmills-field">02 / The Yang–Mills field</h2>
 
-<p>Let $G$ be a compact, simple gauge group, and let $A_\mu$ denote its gauge field.</p>
+<blockquote>
+  <p>Let $G$ be a compact, simple gauge group, and let $A_\mu$ denote its gauge field.</p>
+</blockquote>
 
 <p>The field strength is</p>
 
@@ -237,4 +238,4 @@ b_0=\frac{11N}{3}.\]
 
 <hr />
 
-<p><em>Research notebook / Mathematical physics / Entry 001</em></p>]]></content><author><name></name></author><category term="notes" /><category term="yang-mills" /><category term="mass-gap" /><category term="gauge-theory" /><summary type="html"><![CDATA[A mathematical introduction to Yang–Mills theory, dimensional transmutation, and the mass gap problem.]]></summary></entry></feed>
+<p><em>Research notebook / Mathematical physics / Entry 001</em></p>]]></content><author><name>Sharad</name></author><category term="notes" /><category term="yang-mills" /><category term="mass-gap" /><category term="gauge-theory" /><summary type="html"><![CDATA[RESEARCH NOTE / 001]]></summary></entry></feed>

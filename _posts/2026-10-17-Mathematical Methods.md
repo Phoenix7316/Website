@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Mathematical Methods"
 date: 2026-10-17
 categories:

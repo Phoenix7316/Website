@@ -2,12 +2,48 @@
 <html lang="en">
 
 <head>
-  <!-- Umami Analytics -->
+  <!-- =============================================
+       THEME INITIALIZATION
+       Apply the saved/system theme before rendering
+  ============================================== -->
+  <script>
+  (() => {
+    const root = document.documentElement;
+
+    let savedTheme = null;
+    let savedPalette = null;
+
+    try {
+      savedTheme = localStorage.getItem("theme");
+      savedPalette = localStorage.getItem("darkPalette");
+    } catch (error) {}
+
+    const systemDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    root.dataset.theme =
+      savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : (systemDark ? "dark" : "light");
+
+    root.dataset.darkPalette = savedPalette || "aubergine";
+  })();
+</script>
+
+
+  <!-- =============================================
+       ANALYTICS
+  ============================================== -->
   
 
+
+  <!-- =============================================
+       META INFORMATION
+  ============================================== -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
 
   <title>
     
@@ -17,19 +53,29 @@
   <meta name="description"
         content="Research, publications, projects, and academic ideas.">
 
-  <meta name="theme-color" content="#090D1F">
+  <meta name="theme-color" content="#f5f3ed">
 
-    <!-- Main stylesheet -->
-      <link rel="stylesheet"
-            href="/grad-site/assets/css/style.css">
-        <!-- Main stylesheet -->
-      <link rel="stylesheet"
-            href="/grad-site/assets/css/riemannsurface.css">
 
-        <!-- Existing mathematical background animation -->
-      <link rel="stylesheet"
-            href="/grad-site/assets/css/mathbg.css">
+  <!-- =============================================
+       STYLESHEETS
+  ============================================== -->
 
+  <!-- Main site stylesheet -->
+  <link rel="stylesheet"
+        href="/grad-site/assets/css/style.css">
+
+  <!-- Riemann surface illustrations -->
+  <link rel="stylesheet"
+        href="/grad-site/assets/css/riemannsurface.css">
+
+  <!-- Existing mathematical background animation -->
+  <link rel="stylesheet"
+        href="/grad-site/assets/css/mathbg.css">
+
+
+  <!-- =============================================
+       JEKYLL METADATA
+  ============================================== -->
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/grad-site/feed.xml" title="Sharad Shukla" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Sharad Shukla | Research, publications, projects, and academic ideas.</title>
@@ -49,7 +95,11 @@
 <!-- End Jekyll SEO tag -->
 
 
-  <!-- MathJax: only load on pages that need mathematics -->
+
+  <!-- =============================================
+       MATHJAX
+       Only loaded on pages requiring mathematics
+  ============================================== -->
   
     <script>
       window.MathJax = {
@@ -74,17 +124,25 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
   
+
 </head>
+
 
 <body>
 
-  <!-- Skip navigation -->
+  <!-- =============================================
+       SKIP NAVIGATION
+  ============================================== -->
   <a class="skip-link" href="#main">
     Skip to content
   </a>
 
-  <!-- Site header -->
+
+  <!-- =============================================
+       SITE HEADER
+  ============================================== -->
   <header class="site-header">
+
     <a class="wordmark" href="/grad-site/">
       <span class="wordmark-mark" aria-hidden="true">✦</span>
       <span>Sharad Shukla</span>
@@ -98,15 +156,44 @@
   <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
   <a href="/grad-site/notes/">Notes</a>
+
+  <button
+    id="theme-toggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to dark mode"
+    title="Switch theme"
+  >
+    <svg
+      id="theme-icon"
+      class="theme-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
+    </svg>
+  </button>
 </nav>
 
   </header>
 
-  <!-- Main content -->
+
+  <!-- =============================================
+       MAIN CONTENT
+  ============================================== -->
   <main id="main" class="site-main">
 
     <!-- Page title and optional illustration -->
     
+
 
     <!-- Article content -->
     <article class="page-content">
@@ -568,8 +655,12 @@ and relativistic hydrodynamics.
 
   </main>
 
-  <!-- Site footer -->
+
+  <!-- =============================================
+       SITE FOOTER
+  ============================================== -->
   <footer class="site-footer">
+
     <span>
       © 2026
       Sharad Shukla
@@ -580,12 +671,29 @@ and relativistic hydrodynamics.
         About &amp; contact ↗
       </a>
     </nav>
+
   </footer>
-<!-- Existing background animation: preserved -->
-  <!-- <script defer
+
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================== -->
+
+  <!-- Theme switching -->
+  <script src="/grad-site/assets/js/theme.js" defer></script>
+
+  <!-- Existing mathematical background animation: preserved -->
+  <!--
+  <script defer
     src="/grad-site/assets/js/mathbg.js">
-  </script> -->
-   <!-- Riemann surface animation: preserved -->
-  <script src="/grad-site/assets/js/riemannsurface.js" defer></script>
+  </script>
+  -->
+
+  <!-- Riemann surface animation: preserved -->
+  <script
+    src="/grad-site/assets/js/riemannsurface.js"
+    defer>
+  </script>
+
 </body>
 </html>

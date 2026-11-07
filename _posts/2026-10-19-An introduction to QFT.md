@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "A First Look at Quantum Field Theory"
 date: 2026-10-19
 categories:

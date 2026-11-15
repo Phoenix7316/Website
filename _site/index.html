@@ -66,12 +66,15 @@
 
   <!-- Riemann surface illustrations -->
   <link rel="stylesheet"
-        href="/grad-site/assets/css/riemannsurface.css">
+        href="/grad-site/assets/css/riemannsurface.css"> 
 
   <!-- Existing mathematical background animation -->
   <link rel="stylesheet"
         href="/grad-site/assets/css/mathbg.css">
 
+  <!-- Feynman animation -->
+  <link rel="stylesheet"
+      href="/grad-site/assets/css/feynman.css">
 
   <!-- =============================================
        JEKYLL METADATA
@@ -125,15 +128,17 @@
       <span>Sharad Shukla</span>
     </a>
 
-    <nav class="navigation" aria-label="Main navigation">
-  <a href="/grad-site/research/">Research</a>
+    
+<nav class="navigation" aria-label="Main navigation">
+  <a href="/grad-site/interest/">Research </a>
   <a href="/grad-site/publications/">Publications</a>
-  <a href="/grad-site/cv/">CV</a>
+  <!-- <a href="/grad-site/cv/">CV</a> -->
   <a href="/grad-site/resources/">Resources</a>
   <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
-  <a href="/grad-site/notes/">Notes</a>
+  <!-- <a href="/grad-site/notes/">Notes</a> -->
 
+  <!-- Light / Dark Mode Toggle -->
   <button
     id="theme-toggle"
     class="theme-toggle"
@@ -158,7 +163,38 @@
       <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
     </svg>
   </button>
+
+  <!-- Random Dark Palette -->
+  <button
+    id="theme-randomizer"
+    class="theme-toggle theme-randomizer"
+    type="button"
+    aria-label="Choose a random dark colour palette"
+    title="Randomise dark colour palette"
+  >
+    <svg
+  id="theme-randomizer-icon"
+  class="theme-icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path d="M3 7h3c4.5 0 6 10 11 10h4"/>
+  <path d="m18 14 3 3-3 3"/>
+  <path d="M3 17h3c2 0 3-2 4-3"/>
+  <path d="M14 7h4"/>
+  <path d="m18 4 3 3-3 3"/>
+</svg>
+  </button>
 </nav>
+
 
   </header>
 
@@ -176,8 +212,8 @@
     <article class="page-content">
       <section class="hero">
   <div class="riemannsurface riemannsurface--decorative"
-     data-surface="klein-bottle"
-     style="top: 10%; right: 4%;">
+     data-surface="monkey-saddle"
+     data-placement="center-right">
   </div>
   <p class="eyebrow">ACADEMIC PROFILE / 2026</p>
   <h2>Hey, fellow observer.</h2>
@@ -186,65 +222,68 @@
   
   <p class="lede">
     I'm <span class="accent">Sharad Shukla</span>, a graduate student
-    exploring the fascinating world of
-    <span class="accent">Theoretical High Energy Physics</span>,
-    where the smallest constituents of nature may hold clues to the
-    deepest mysteries of our universe.
+    in <span class="accent">Theoretical High Energy Physics</span>,
+    driven by a curiosity governing the fundamental laws of our 
+    universe and the mathematical structures that underlie them.
   </p>
 
   <p class="lede">
-    I'm fascinated by the interplay of mathematics and fundamental
-    physics, where abstract structures reveal hidden patterns of nature,
-    symmetries illuminate the underlying principles of reality, and
-    unanswered questions invite us to venture deeper into the mysteries
-    of the universe.
+    I am also fascinated by the profound connection between mathematics and physics. I find it remarkable, how symmetry can reveal hidden patterns in nature, while abstract mathematical ideas provide a way to describe the physical world. Often, seemingly unrelated ideas come together, offering new perspectives and a deeper understanding of nature. In my view, theoretical physics is a continuous exploration of these connections. It is guided by the mathematical elegance and physical intuition, along with a lasting curiosity to understand the universe at its most fundamental level.
+  </p>
+
+ 
+  <p class="lede">
+    Beyond its mathematical elegance, theoretical physics is more than the study 
+    of what the universe is; it is an attempt to understand <em> why it is the
+    way it is</em> and <em> what it could become</em>.
   </p>
 
   <p class="lede">
-    For me, physics is more than the study of what the universe is;
-    it is an attempt to understand <em>why it is the way it is</em>.
-    This page is a space to share that journey — through abstract ideas,
-    fundamental principles, and the beautiful pursuit of understanding
-    the cosmos, one question at a time.
+    After all, the universe is vast, there is still 
+    so much we don't understand, and perhaps that is
+    what makes the journey so fascinating.
   </p>
+ 
 
+ 
+
+  <p class="lede">
   <blockquote>
-    <p>
-      <em>
+    <p class="accent">
         Somewhere between an equation and a question lies a universe
         waiting to be understood.
-      </em>
     </p>
   </blockquote>
-
-  <p class="muted">
-    And I am one more calculation away from understanding reality.
-    Probably.
   </p>
 
-  <p>
-    <strong>
-      After all, the universe is vast, our understanding is incomplete,
-      and there is always more to wonder about.
-    </strong>
+  <p class="muted">
+    And I am only one more calculation away from understanding the reality itself.
+    <span class="accent">Probably :)</span>
+  </p>
+
+  
+  <p class="lede">
+    Through this portal of mine in cosmos, I hope to share that journey of exploration,
+    bringing together mathematical ideas, fundamental physics, and the
+    questions that continue to deepen our understanding.
   </p>
 
   <div class="hero-links">
-    <a class="text-link" href="/grad-site/research/">
-      Explore my research ↗
+    <a class="text-link" href="/grad-site/interest/">
+      Explore my research interests ↗
     </a>
 
     <a class="text-link" href="/grad-site/publications/">
       Publications ↗
     </a>
 
-    <a class="text-link" href="/grad-site/cv/">
+    <!-- <a class="text-link" href="/grad-site/cv/">
       Academic CV ↗
-    </a>
+    </a> -->
   </div>
 </section>
 
-<section class="section" id="research-interests">
+<!-- <section class="section" id="research-interests">
   <div class="section-heading">
     <p class="eyebrow">01 / FOCUS</p>
     <h2>Research interests</h2>
@@ -261,10 +300,11 @@
       <article class="entry">
         <div class="entry-meta">01</div>
         <div>
-          <h3 class="entry-title">Quantum Field Theory</h3>
+          <h3 class="entry-title">Field Theory</h3>
           <p>
             Understanding fields, particles, interactions, and the
-            mathematical language underlying modern particle physics.
+            mathematical language underlying the theoretical physics
+            in micro(quantum) and macro(astronomical) worlds.
           </p>
         </div>
       </article>
@@ -274,8 +314,8 @@
         <div>
           <h3 class="entry-title">Symmetries and Mathematical Physics</h3>
           <p>
-            Exploring how symmetry principles, group structures, and
-            invariance guide the formulation of physical theories.
+            Exploring how symmetry principles, group structures, and the
+            action principle guides the formulation of physical theories.
           </p>
         </div>
       </article>
@@ -304,13 +344,14 @@
     </div>
 
     <p class="muted">
-      These are areas of interest, not a claim that I have conducted
+      These are the broad areas of interest, not a claim that I have conducted
       research in every topic listed.
     </p>
   </div>
-</section>
+</section> -->
 
-<section class="section" id="approach">
+
+<!-- <section class="section" id="approach">
   <div class="section-heading">
     <p class="eyebrow">02 / APPROACH</p>
     <h2>How I think about physics</h2>
@@ -336,11 +377,11 @@
       theory raises a deeper question about its own foundations.
     </p>
   </div>
-</section>
+</section> -->
 
 <section class="section" id="academic-work">
   <div class="section-heading">
-    <p class="eyebrow">03 / WORK</p>
+    <p class="eyebrow">01 / WORK</p>
     <h2>Research &amp; academic work</h2>
   </div>
 
@@ -350,10 +391,10 @@
       <div>
         <h3 class="entry-title">Questions I'm exploring</h3>
         <p>
-          A developing overview of my research direction, current
-          questions, and the theoretical tools I am learning to use.
+          A developing overview of my research interests and current
+          direction of exploration.
         </p>
-        <a class="text-link" href="/grad-site/research/">
+        <a class="text-link" href="/grad-site/interest/">
           Visit research page ↗
         </a>
       </div>
@@ -374,40 +415,38 @@
     </article>
 
     <article class="entry">
-      <div class="entry-meta">Notes</div>
+      <div class="entry-meta">Resources</div>
       <div>
-        <h3 class="entry-title">Ideas, derivations &amp; learning notes</h3>
+        <h3 class="entry-title">References &amp; useful tools</h3>
         <p>
-          A possible home for mathematical derivations, explanations
-          of concepts, reading notes, and questions encountered while
-          studying theoretical physics.
+          A  collection of widely recommended resources helpful in building 
+          fundamentals of theoretical physics.
         </p>
-        <a class="text-link" href="/grad-site/notes/">
-          Explore notes ↗
+        <a class="text-link" href="/grad-site/resources/">
+          Visit Resources ↗
         </a>
       </div>
     </article>
-    <article class="entry">
+    <!-- <article class="entry">
       <div class="entry-meta">Notes &amp; Posts</div>
 
       <div>
         <h3 class="entry-title">Ideas, derivations &amp; learning notes</h3>
 
         <p>
-          A growing notebook of mathematical derivations, quantum field
-          theory concepts, reading notes, and reflections on fundamental
-          physics.
+          A growing notebook of my understanding of various mathematical concepts, 
+          and derivations used in fundamental physics.
         </p>
 
         <a class="text-link" href="/grad-site/notes/">
           Explore notes &amp; posts ↗
         </a>
       </div>
-    </article>
+    </article> -->
   </div>
 </section>
 
-<section class="section" id="beyond-equations">
+<!-- <section class="section" id="beyond-equations">
   <div class="section-heading">
     <p class="eyebrow">04 / CURIOSITY</p>
     <h2>Beyond the equations</h2>
@@ -433,12 +472,12 @@
       Probably.
     </p>
   </div>
-</section>
+</section> -->
 
 <section class="section" id="contact">
   <div class="section-heading">
-    <p class="eyebrow">05 / CONNECT</p>
-    <h2>Let's talk physics</h2>
+    <p class="eyebrow">02 / CONNECT</p>
+    <h2>Scientific exchange</h2>
   </div>
 
   <div class="section-content">
@@ -453,13 +492,11 @@
     </p>
 
     <div class="hero-links">
-      <a class="text-link" href="/grad-site/about/">
-        More about me ↗
+
+      <a class="text-link" href="/grad-site/contact/">
+        Let's connect ↗
       </a>
 
-      <a class="text-link" href="/grad-site/cv/">
-        View my CV ↗
-      </a>
     </div>
   </div>
   
@@ -481,7 +518,7 @@
     </span>
 
     <nav aria-label="Footer navigation">
-      <a href="/grad-site/about/">
+      <a href="/grad-site/contact/">
         About &amp; contact ↗
       </a>
     </nav>
@@ -506,6 +543,23 @@
   <!-- Riemann surface animation: preserved -->
   <script
     src="/grad-site/assets/js/riemannsurface.js"
+    defer>
+  </script>
+  <!-- Feynman animation -->
+  
+  <!-- =========================================
+     FEYNMAN CYCLING ANIMATION
+========================================= -->
+
+<div id="feynman-rider" class="feynman-rider" aria-hidden="true">
+  <img
+    src="/grad-site/assets/images/feynman-greeting.gif"
+    alt=""
+    class="feynman-rider-image"
+  >
+</div>
+  <script
+    src="/grad-site/assets/js/feynman.js"
     defer>
   </script>
 

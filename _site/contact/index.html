@@ -66,12 +66,15 @@
 
   <!-- Riemann surface illustrations -->
   <link rel="stylesheet"
-        href="/grad-site/assets/css/riemannsurface.css">
+        href="/grad-site/assets/css/riemannsurface.css"> 
 
   <!-- Existing mathematical background animation -->
   <link rel="stylesheet"
         href="/grad-site/assets/css/mathbg.css">
 
+  <!-- Feynman animation -->
+  <link rel="stylesheet"
+      href="/grad-site/assets/css/feynman.css">
 
   <!-- =============================================
        JEKYLL METADATA
@@ -148,15 +151,17 @@
       <span>Sharad Shukla</span>
     </a>
 
-    <nav class="navigation" aria-label="Main navigation">
-  <a href="/grad-site/research/">Research</a>
+    
+<nav class="navigation" aria-label="Main navigation">
+  <a href="/grad-site/interest/">Research </a>
   <a href="/grad-site/publications/">Publications</a>
-  <a href="/grad-site/cv/">CV</a>
+  <!-- <a href="/grad-site/cv/">CV</a> -->
   <a href="/grad-site/resources/">Resources</a>
   <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
-  <a href="/grad-site/notes/">Notes</a>
+  <!-- <a href="/grad-site/notes/">Notes</a> -->
 
+  <!-- Light / Dark Mode Toggle -->
   <button
     id="theme-toggle"
     class="theme-toggle"
@@ -181,7 +186,38 @@
       <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
     </svg>
   </button>
+
+  <!-- Random Dark Palette -->
+  <button
+    id="theme-randomizer"
+    class="theme-toggle theme-randomizer"
+    type="button"
+    aria-label="Choose a random dark colour palette"
+    title="Randomise dark colour palette"
+  >
+    <svg
+  id="theme-randomizer-icon"
+  class="theme-icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path d="M3 7h3c4.5 0 6 10 11 10h4"/>
+  <path d="m18 14 3 3-3 3"/>
+  <path d="M3 17h3c2 0 3-2 4-3"/>
+  <path d="M14 7h4"/>
+  <path d="m18 4 3 3-3 3"/>
+</svg>
+  </button>
 </nav>
+
 
   </header>
 
@@ -198,14 +234,14 @@
     <!-- Article content -->
     <article class="page-content">
       <section class="hero">
-<p class="eyebrow">05 / CONTACT</p>
-<div class="riemannsurface riemannsurface--decorative" data-surface="catenoid" style="top: 8%; right: 5%;">
+<div class="riemannsurface riemannsurface--decorative" data-surface="catenoid" data-placement="center-right">
 </div>
+<p class="eyebrow">04 / CONTACT</p>
 <h1>Let's <span class="accent">connect.</span></h1>
 
 <p class="lede">
-For research discussions, academic correspondence, or potential
-collaborations in theoretical physics, I welcome hearing 
+For research discussions, academic correspondence, or exchange of 
+ideas in physics and mathematics, I welcome hearing 
 from you.
 </p>
 <div class="hero-links">
@@ -222,7 +258,7 @@ from you.
 
 <div class="section-content">
 <p>
-I am happy to hear from students, researchers, and academics
+I am always happy to hear from fellow students, researchers, and academics
 interested in theoretical high-energy physics, and related areas
 of mathematical physics.
 </p>
@@ -310,7 +346,7 @@ Saha Institute of Nuclear Physics in Kolkata, India.
     </span>
 
     <nav aria-label="Footer navigation">
-      <a href="/grad-site/about/">
+      <a href="/grad-site/contact/">
         About &amp; contact ↗
       </a>
     </nav>
@@ -337,6 +373,7 @@ Saha Institute of Nuclear Physics in Kolkata, India.
     src="/grad-site/assets/js/riemannsurface.js"
     defer>
   </script>
-
+  <!-- Feynman animation -->
+  
 </body>
 </html>

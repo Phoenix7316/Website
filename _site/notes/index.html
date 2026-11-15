@@ -66,12 +66,15 @@
 
   <!-- Riemann surface illustrations -->
   <link rel="stylesheet"
-        href="/grad-site/assets/css/riemannsurface.css">
+        href="/grad-site/assets/css/riemannsurface.css"> 
 
   <!-- Existing mathematical background animation -->
   <link rel="stylesheet"
         href="/grad-site/assets/css/mathbg.css">
 
+  <!-- Feynman animation -->
+  <link rel="stylesheet"
+      href="/grad-site/assets/css/feynman.css">
 
   <!-- =============================================
        JEKYLL METADATA
@@ -148,15 +151,17 @@
       <span>Sharad Shukla</span>
     </a>
 
-    <nav class="navigation" aria-label="Main navigation">
-  <a href="/grad-site/research/">Research</a>
+    
+<nav class="navigation" aria-label="Main navigation">
+  <a href="/grad-site/interest/">Research </a>
   <a href="/grad-site/publications/">Publications</a>
-  <a href="/grad-site/cv/">CV</a>
+  <!-- <a href="/grad-site/cv/">CV</a> -->
   <a href="/grad-site/resources/">Resources</a>
   <!-- <a href="/grad-site/about/">About</a> -->
   <a href="/grad-site/contact/">Contact Me</a>
-  <a href="/grad-site/notes/">Notes</a>
+  <!-- <a href="/grad-site/notes/">Notes</a> -->
 
+  <!-- Light / Dark Mode Toggle -->
   <button
     id="theme-toggle"
     class="theme-toggle"
@@ -181,7 +186,38 @@
       <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
     </svg>
   </button>
+
+  <!-- Random Dark Palette -->
+  <button
+    id="theme-randomizer"
+    class="theme-toggle theme-randomizer"
+    type="button"
+    aria-label="Choose a random dark colour palette"
+    title="Randomise dark colour palette"
+  >
+    <svg
+  id="theme-randomizer-icon"
+  class="theme-icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path d="M3 7h3c4.5 0 6 10 11 10h4"/>
+  <path d="m18 14 3 3-3 3"/>
+  <path d="M3 17h3c2 0 3-2 4-3"/>
+  <path d="M14 7h4"/>
+  <path d="m18 4 3 3-3 3"/>
+</svg>
+  </button>
 </nav>
+
 
   </header>
 
@@ -198,9 +234,9 @@
     <!-- Article content -->
     <article class="page-content">
       <section class="hero">
-<p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
-<div class="riemannsurface riemannsurface--decorative" data-surface="riemann-minimal" style="top: 7%; right: 3%;">
+<div class="riemannsurface riemannsurface--decorative" data-surface="riemann-minimal" data-placement="center-right">
 </div>
+<p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
 <h1><span class="accent">Notes</span> from the journey.</h1>
 
 <p class="lede">
@@ -218,7 +254,7 @@
 
 <section class="section">
   <div class="section-heading">
-    <p class="section-number">01 / NOTES</p>
+    <p class="eyebrow">01 / NOTES</p>
     <h2>Recent posts</h2>
   </div>
 <article class="publication">
@@ -344,7 +380,7 @@
 </article>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="section-heading">
     <p class="section-number">02 / TOPICS</p>
     <h2>Areas of exploration</h2>
@@ -384,31 +420,22 @@
       </div>
     </article>
   </div>
-</section>
+</section> -->
 
-<section class="section">
+<section class="section" id="contact">
   <div class="section-heading">
-    <p class="section-number">03 / ELSEWHERE</p>
-    <h2>Continue exploring</h2>
+    <p class="eyebrow">03 / Explore</p>
+    <h2>Explore</h2>
   </div>
 
-  <div class="section-content">
+  <div class="section-content math-anchor">
     <p>
-      Looking for my research direction or formal academic work?
+      Looking for something else, try exploring
     </p>
-
     <div class="hero-links">
-      <a class="text-link" href="/grad-site/research/">
-        Research ↗
-      </a>
-
-      <a class="text-link" href="/grad-site/publications/">
-        Publications ↗
-      </a>
-
-      <a class="text-link" href="/grad-site/about/">
-        About me ↗
-      </a>
+      <a class="text-link" href="/grad-site/publications/">My research ↗</a>
+      <a class="text-link" href="/grad-site/resources/">Research resources ↗</a>
+      <!-- <a class="text-link" href="/grad-site/cv/">View curriculum vitae ↗</a> -->
     </div>
   </div>
 </section>
@@ -429,7 +456,7 @@
     </span>
 
     <nav aria-label="Footer navigation">
-      <a href="/grad-site/about/">
+      <a href="/grad-site/contact/">
         About &amp; contact ↗
       </a>
     </nav>
@@ -456,6 +483,7 @@
     src="/grad-site/assets/js/riemannsurface.js"
     defer>
   </script>
-
+  <!-- Feynman animation -->
+  
 </body>
 </html>

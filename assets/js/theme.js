@@ -1,12 +1,18 @@
 /* =========================================
    THEME CONTROLLER
-   Random dark palette selection
+   Light/Dark Toggle + Random Palette
 ========================================= */
 
 (() => {
+  "use strict";
+
   const root = document.documentElement;
-  const button = document.getElementById("theme-toggle");
-  const icon = document.getElementById("theme-icon");
+
+  const themeButton = document.getElementById("theme-toggle");
+  const randomButton = document.getElementById("theme-randomizer");
+
+  const themeIcon = document.getElementById("theme-icon");
+  const randomIcon = document.getElementById("theme-randomizer-icon");
 
   /* -----------------------------------------
      AVAILABLE DARK PALETTES
@@ -24,7 +30,8 @@
     "arctic-night",
     "plum-dusk",
     "copper-night",
-    "slate-mint"
+    "slate-mint",
+    "graphite"
   ];
 
   /* -----------------------------------------
@@ -48,9 +55,17 @@
     <path d="m17.65 6.35 1.42-1.42"/>
   `;
 
+  const shuffleIcon = `
+    <path d="m18 14 4 4-4 4"/>
+    <path d="m18 2 4 4-4 4"/>
+    <path d="M2 18h2.5a6 6 0 0 0 4.2-1.7L19.3 6.3A6 6 0 0 1 23 5"/>
+    <path d="M2 6h2.5a6 6 0 0 1 4.2 1.7"/>
+    <path d="m14 14 1.3 1.3a6 6 0 0 0 4.2 1.7H22"/>
+  `;
+
   /* -----------------------------------------
      RANDOM PALETTE GENERATOR
-     Avoids selecting the previous palette
+     Avoids the currently active palette
   ----------------------------------------- */
 
   function getRandomPalette(currentPalette) {
@@ -64,54 +79,79 @@
   }
 
   /* -----------------------------------------
+     SAVE PREFERENCES
+  ----------------------------------------- */
+
+  function savePreferences(theme, palette) {
+    try {
+      localStorage.setItem("theme", theme);
+      localStorage.setItem("darkPalette", palette);
+    } catch (error) {
+      // Theme still works if localStorage is unavailable.
+    }
+  }
+
+  /* -----------------------------------------
      APPLY THEME
   ----------------------------------------- */
 
   function applyTheme(theme, palette) {
+    const selectedPalette = darkPalettes.includes(palette)
+      ? palette
+      : "aubergine";
+
     root.dataset.theme = theme;
-
-    if (theme === "dark") {
-      const selectedPalette =
-        darkPalettes.includes(palette)
-          ? palette
-          : "aubergine";
-
-      root.dataset.darkPalette = selectedPalette;
-    }
+    root.dataset.darkPalette = selectedPalette;
 
     const isDark = theme === "dark";
 
-    // Update theme icon.
-    if (icon) {
-      icon.innerHTML = isDark ? sunIcon : moonIcon;
+    // Update light/dark icon.
+    if (themeIcon) {
+      themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
     }
 
-    // Update button accessibility labels.
-    if (button) {
+    // Update theme button accessibility.
+    if (themeButton) {
       const label = isDark
         ? "Switch to light mode"
         : "Switch to dark mode";
 
-      button.setAttribute("aria-label", label);
-      button.setAttribute("title", label);
+      themeButton.setAttribute("aria-label", label);
+      themeButton.setAttribute("title", label);
     }
 
-    // Update browser theme colour.
+    // Update randomiser accessibility.
+    if (randomButton) {
+      randomButton.setAttribute(
+        "aria-label",
+        "Choose a random dark colour palette"
+      );
+
+      randomButton.setAttribute(
+        "title",
+        "Randomise dark colour palette"
+      );
+    }
+
+    // Update browser theme colour from active CSS.
     const themeColor = document.querySelector(
       'meta[name="theme-color"]'
     );
 
     if (themeColor) {
+      const background = getComputedStyle(root)
+        .getPropertyValue("--paper")
+        .trim();
+
       themeColor.setAttribute(
         "content",
-        isDark ? "#191824" : "#f5f3ed"
+        background || (isDark ? "#000000" : "#f5f3ed")
       );
     }
   }
 
   /* -----------------------------------------
-     RESTORE SAVED THEME AND PALETTE
-     Values are initialized in the HTML head
+     RESTORE SAVED PREFERENCES
   ----------------------------------------- */
 
   const savedTheme = root.dataset.theme || "light";
@@ -120,37 +160,38 @@
   applyTheme(savedTheme, savedPalette);
 
   /* -----------------------------------------
-     THEME TOGGLE
+     1. LIGHT / DARK TOGGLE
+     Changes appearance only.
+     Does not randomise the palette.
   ----------------------------------------- */
 
-  if (button) {
-    button.addEventListener("click", () => {
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
       const currentlyDark = root.dataset.theme === "dark";
 
-      if (currentlyDark) {
+      const nextTheme = currentlyDark ? "light" : "dark";
+      const currentPalette = root.dataset.darkPalette;
 
-        // Switch to light mode.
-        try {
-          localStorage.setItem("theme", "light");
-        } catch (error) {}
+      savePreferences(nextTheme, currentPalette);
 
-        applyTheme("light", root.dataset.darkPalette);
+      applyTheme(nextTheme, currentPalette);
+    });
+  }
 
-      } else {
+  /* -----------------------------------------
+     2. RANDOM PALETTE BUTTON
+     Always switches to dark mode.
+  ----------------------------------------- */
 
-        // Select a new random dark palette.
-        const nextPalette = getRandomPalette(
-          root.dataset.darkPalette
-        );
+  if (randomButton) {
+    randomButton.addEventListener("click", () => {
+      const currentPalette = root.dataset.darkPalette;
 
-        // Save theme and palette.
-        try {
-          localStorage.setItem("theme", "dark");
-          localStorage.setItem("darkPalette", nextPalette);
-        } catch (error) {}
+      const nextPalette = getRandomPalette(currentPalette);
 
-        applyTheme("dark", nextPalette);
-      }
+      savePreferences("dark", nextPalette);
+
+      applyTheme("dark", nextPalette);
     });
   }
 

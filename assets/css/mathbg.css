@@ -15,7 +15,9 @@
 
 /* Keep the site's existing paper background. */
 body {
-  position: absolute;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Fixed layer, visible behind page content. */

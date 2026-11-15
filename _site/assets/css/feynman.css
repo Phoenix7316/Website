@@ -1,0 +1,80 @@
+/* =========================================
+   FEYNMAN — ONE-TIME WELCOME ANIMATION
+========================================= */
+
+/* Fixed to the browser viewport, not the page footer */
+
+.feynman-rider {
+  position: fixed !important;
+
+  left: 0 !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 12px !important;
+
+  width: 250px;
+  height: auto;
+
+  z-index: 99999;
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(-110%);
+}
+
+/* Character image */
+
+.feynman-rider-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+/* Start the ride */
+
+.feynman-rider.is-riding {
+  visibility: visible;
+  opacity: 1;
+
+  animation: feynman-cross-screen 8s linear forwards;
+}
+
+/* Travel completely across the viewport */
+
+@keyframes feynman-cross-screen {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 110%));
+  }
+}
+
+/* Hide after the ride */
+
+.feynman-rider.is-finished {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Mobile sizing */
+
+@media (max-width: 600px) {
+  .feynman-rider {
+    width: 190px;
+    bottom: 8px !important;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .feynman-rider {
+    display: none !important;
+    animation: none !important;
+  }
+}

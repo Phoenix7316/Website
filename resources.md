@@ -5,10 +5,10 @@ math: true
 ---
 
 <section class="hero">
-<p class="eyebrow">04 / RESOURCES</p>
+<p class="eyebrow">03 / RESOURCES</p>
 <div class="riemannsurface riemannsurface--decorative"
      data-surface="enneper"
-     style="top: 7%; right: 3%;">
+     data-placement="center-right">
 </div>
 <h1>References & <span class="accent">useful tools.</span></h1>
 
@@ -47,7 +47,7 @@ developments in theoretical physics.
       Lectures on Relativistic Hydrodynamics
     </a>
   </h3>
-  <p>
+  <p class="lede">
     <span class="accent">Pavel Kovtun's</span> lecture notes on relativistic fluid dynamics,
     covering conservation laws, hydrodynamic constitutive relations,
     and the theoretical foundations of fluid behaviour near equilibrium.
@@ -65,7 +65,7 @@ developments in theoretical physics.
       Lecture Notes on General Relativity
     </a>
   </h3>
-  <p>
+  <p class="lede">
     <span class="accent">Matthias Blau's</span> lecture notes on General Relativity spans across a wide range of concepts and applications related to behaviour of matter and fields in non-Euclidean geometries.
   </p>
   <a class="text-link" href="http://blau.itp.unibe.ch/GRLecturenotes.html" target="_blank" rel="noopener noreferrer">
@@ -80,17 +80,16 @@ developments in theoretical physics.
       Review article on Carroll physics
     </a>
   </h3>
-  <p>
-    A related resource for exploring Carrollian physics and its
-    connections to spacetime symmetries and non-Lorentzian limits.
-    Consult the paper for its precise scope and applications.
+  <p class="lede">
+    A closely related resource for exploring Carrollian physics.
+    Consult the article for its precise scope and applications.
   </p>
   <a class="text-link" href="https://arxiv.org/abs/2506.16164" target="_blank" rel="noopener noreferrer">
     Read on arXiv ↗
   </a>
 </article>
 
-<article class="publication">
+<!-- <article class="publication">
   <p class="publication-type">PERSONAL RESEARCH</p>
   <h3>
     <a href="{{ '/assets/pdf/research-paper.pdf' | relative_url }}">
@@ -105,7 +104,7 @@ developments in theoretical physics.
   <a class="text-link" href="{{ '/assets/pdf/research-paper.pdf' | relative_url }}">
     Download PDF ↓
   </a>
-</article> 
+</article>  -->
 </div>
 </section>
 
@@ -223,7 +222,7 @@ the scope of a single textbook.
       MIT OpenCourseWare
     </a>
   </h3>
-  <p>
+  <p class="lede">
     A collection of freely accessible university course materials.
     Useful for reviewing fluid mechanics, differential equations,
     classical mechanics, and related mathematical methods.
@@ -240,7 +239,7 @@ the scope of a single textbook.
       PIRSA-Perimeter Institute's video library
     </a>
   </h3>
-  <p>
+  <p class="lede">
     The Perimeter Institute has a huge collection of recorded video lectures 
     and courses that can be useful for brushing up old concepts or learning 
     entirely new ones across all domains of physics.
@@ -257,7 +256,7 @@ the scope of a single textbook.
       Lectures and Notes
     </a>
   </h3>
-  <p>
+  <p class="lede">
     Prof.<span class="accent"> Ashoke Sen</span> has also posted a self contained 
     collection of his video lectures and notes across various subjects on his 
     personal website.
@@ -328,12 +327,12 @@ connections between related publications.
 
 <section class="section" id="using-these-resources">
 <div class="section-heading">
-<p class="eyebrow">06 / NOTES</p>
+<p class="eyebrow">05 / NOTES</p>
 <h2>Using this collection</h2>
 </div>
 
 <div class="section-content">
-<p>
+<p class="lede">
 This is a working collection rather than an exhaustive bibliography.
 The resources are selected for their relevance to my interests in
 Hydrodynamics, Field theory, and Theoretical
@@ -341,18 +340,18 @@ High-Energy Physics.
 </p>
 
 
-<p>
+<p class="lede">
   I intend to expand the list with more specialised review articles,
   research papers, lecture notes and other resources as
   I encounter useful material.
 </p>
 
-<p>
+<p class="lede">
   Suggestions for additional resources and relevant references
   are welcome.
 </p>
 
-<a class="text-link" href="{{ '/about/' | relative_url }}">
+<a class="text-link" href="{{ '/contact/' | relative_url }}">
   Get in touch ↗
 </a>
 </div>

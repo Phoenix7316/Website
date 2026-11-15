@@ -1,13 +1,13 @@
----
+<!-- ---
 layout: default
 permalink: /about/
 math: true
----
-
+--- -->
+<!-- 
 <section class="hero math-anchor">
  <div class="riemannsurface riemannsurface--decorative"
      data-surface="helicoid"
-     style="top: 20%; right: 13%;">
+     data-placement="center-right">
 </div>
 <p class="eyebrow">05 / ABOUT</p>
 <h1>Curiosity, <span class="accent">mathematics,</span> and the physics of nature.</h1>
@@ -21,9 +21,9 @@ math: true
     <a class="text-link" href="{{ '/research/' | relative_url }}">Research page ↗</a>
     <a class="text-link" href="{{ '/cv/' | relative_url }}">Curriculum vitae ↗</a>
   </div>
-</section>
+</section> -->
 
-<section class="section" id="background">
+<!-- <section class="section" id="background">
   <div class="section-heading">
     <p class="eyebrow">01 / BACKGROUND</p>
     <h2>A little about me</h2>
@@ -51,66 +51,18 @@ math: true
       with evidence.
     </p>
   </div>
-</section>
+</section> -->
 
 
-<section class="section" id="interests">
-  <div class="section-heading">
-    <p class="eyebrow">02 / INTERESTS</p>
-    <h2>Questions that motivate me</h2>
-  </div>
 
-  <div class="section-content math-anchor">
-    <article class="entry">
-      <div class="entry-meta">01 / PRIMARY INTEREST</div>
-      <div>
-        <h3 class="entry-title">Relativistic hydrodynamics</h3>
-        <p>
-          Understanding how matter evolves when relativistic effects
-          become essential, and how conservation laws and constitutive
-          relations describe the collective dynamics of strongly
-          interacting systems.
-        </p>
-        <span class="tag">Fluid dynamics</span>
-        <span class="tag">Transport phenomena</span>
-      </div>
-    </article>
-    <article class="entry">
-      <div class="entry-meta">02 / THEORETICAL FOUNDATIONS</div>
-      <div>
-        <h3 class="entry-title">Quantum field theory</h3>
-        <p>
-          Exploring the mathematical framework of quantum fields and
-          their role in describing fundamental interactions, thermal
-          systems, and the microscopic properties of matter.
-        </p>
-        <span class="tag">Quantum fields</span>
-        <span class="tag">Thermal physics</span>
-      </div>
-    </article>
-    <article class="entry">
-      <div class="entry-meta">03 / MATHEMATICAL PHYSICS</div>
-      <div>
-        <h3 class="entry-title">Mathematical structure &amp; physical intuition</h3>
-        <p>
-          I enjoy studying the mathematical ideas behind physical theories,
-          from symmetries and differential equations to the assumptions
-          that determine the scope and consistency of a model.
-        </p>
-        <span class="tag">Mathematical reasoning</span>
-        <span class="tag">Physical principles</span>
-      </div>
-    </article>
-  </div>
-</section>
 
-<section class="section" id="approach">
+<!-- <section class="section" id="approach">
   <div class="section-heading">
     <p class="eyebrow">03 / APPROACH</p>
     <h2>How I think about physics</h2>
   </div>
 
-  <div class="section-content math-anchor">
+   <div class="section-content math-anchor">
     <p>
       I believe that progress in theoretical physics comes from combining
       clear mathematical reasoning with an understanding of the physical
@@ -130,9 +82,9 @@ math: true
       an initial interpretation.
     </p>
   </div>
-</section>
+</section> -->
 
-<section class="section" id="beyond-research">
+<!-- <section class="section" id="beyond-research">
   <div class="section-heading">
     <p class="eyebrow">04 / PERSPECTIVE</p>
     <h2>Beyond individual problems</h2>
@@ -151,9 +103,9 @@ math: true
       mathematics, and the process of scientific learning.
     </p>
   </div>
-</section>
+</section> -->
 
-<section class="section" id="contact">
+<!-- <section class="section" id="contact">
   <div class="section-heading">
     <p class="eyebrow">05 / Navigate</p>
     <h2>Explore</h2>
@@ -170,4 +122,4 @@ math: true
       <a class="text-link" href="{{ '/cv/' | relative_url }}">View curriculum vitae ↗</a>
     </div>
   </div>
-</section>
+</section> -->

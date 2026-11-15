@@ -5,11 +5,11 @@ math: true
 ---
 
 <section class="hero">
-<p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
 <div class="riemannsurface riemannsurface--decorative"
      data-surface="riemann-minimal"
-     style="top: 7%; right: 3%;">
+     data-placement="center-right">
 </div>
+<p class="eyebrow">THE ACADEMIC NOTEBOOK / 2026</p>
 <h1><span class="accent">Notes</span> from the journey.</h1>
 
 <p class="lede">
@@ -27,7 +27,7 @@ math: true
 
 <section class="section">
   <div class="section-heading">
-    <p class="section-number">01 / NOTES</p>
+    <p class="eyebrow">01 / NOTES</p>
     <h2>Recent posts</h2>
   </div>
 <article class="publication">
@@ -82,7 +82,7 @@ math: true
 </article>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="section-heading">
     <p class="section-number">02 / TOPICS</p>
     <h2>Areas of exploration</h2>
@@ -122,31 +122,22 @@ math: true
       </div>
     </article>
   </div>
-</section>
+</section> -->
 
-<section class="section">
+<section class="section" id="contact">
   <div class="section-heading">
-    <p class="section-number">03 / ELSEWHERE</p>
-    <h2>Continue exploring</h2>
+    <p class="eyebrow">03 / Explore</p>
+    <h2>Explore</h2>
   </div>
 
-  <div class="section-content">
+  <div class="section-content math-anchor">
     <p>
-      Looking for my research direction or formal academic work?
+      Looking for something else, try exploring
     </p>
-
     <div class="hero-links">
-      <a class="text-link" href="{{ '/research/' | relative_url }}">
-        Research ↗
-      </a>
-
-      <a class="text-link" href="{{ '/publications/' | relative_url }}">
-        Publications ↗
-      </a>
-
-      <a class="text-link" href="{{ '/about/' | relative_url }}">
-        About me ↗
-      </a>
+      <a class="text-link" href="{{ '/publications/' | relative_url }}">My research ↗</a>
+      <a class="text-link" href="{{ '/resources/' | relative_url }}">Research resources ↗</a>
+      <!-- <a class="text-link" href="{{ '/cv/' | relative_url }}">View curriculum vitae ↗</a> -->
     </div>
   </div>
 </section>

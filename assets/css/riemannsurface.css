@@ -1,6 +1,16 @@
+---
+---
+
 /* =========================================================
    RIEMANN SURFACES
    Responsive styling for all 15 parametric surfaces
+
+   Design principles:
+   - Surface-independent placement
+   - Responsive container dimensions
+   - Independent mathematical drawing scale
+   - No scroll-container behaviour
+   - Theme-aware surface appearance
    ========================================================= */
 
 
@@ -9,35 +19,28 @@
    ========================================================= */
 
 :root {
-  /* Fluid surface dimensions */
 
-  --riemann-width: clamp(220px, 38vw, 720px);
-  --riemann-height: clamp(180px, 24vw, 420px);
+  /* Larger responsive decorative frame */
+  --riemann-width: 40%;
 
-  /* SVG scaling */
+  /* Mathematical drawing scale â€” keep unchanged */
+  --riemann-drawing-scale: 0.5;
 
-  --riemann-scale: 1.5;
+  /* Overall illustration appearance */
+  --riemann-opacity: 0.30;
 
-  /* Appearance */
-
-  --riemann-opacity: 0.48;
-
-  /* Neutral wireframe mesh */
-  --riemann-mesh: var(--muted);
-
-  /* Automatically follows the active theme */
-  --riemann-accent: var(--red);
-
-  /* Surface depth */
-
-  --riemann-fill-opacity: 0.10;
+  /* Wireframe */
+  --riemann-mesh: var(--ink);
   --riemann-mesh-opacity: 0.72;
-  --riemann-accent-opacity: 0.90;
+  --riemann-mesh-width: 1;
 
-  /* Stroke widths */
-
-  --riemann-mesh-width: 0.8;
+  /* Accent curve */
+  --riemann-accent: var(--red);
+  --riemann-accent-opacity: 1.0;
   --riemann-accent-width: 1.15;
+
+  /* Surface shading */
+  --riemann-fill-opacity: 0.4;
 }
 
 
@@ -45,16 +48,27 @@
    02. POSITIONING CONTEXT
    ========================================================= */
 
-body {
+.hero,
+#background,
+#background-education,
+#interests,
+#approach,
+#beyond-research,
+#contact {
+
   position: relative;
+  isolation: isolate;
 }
 
+
+/* =========================================================
+   03. BASE DECORATIVE ILLUSTRATION
+   ========================================================= */
+
 .riemannsurface--decorative {
+
   position: absolute;
   display: block;
-
-  width: var(--riemann-width);
-  height: var(--riemann-height);
 
   box-sizing: border-box;
 
@@ -65,446 +79,364 @@ body {
   pointer-events: none;
   user-select: none;
 
+  /* Container dimensions */
+  width: var(--riemann-width) !important;
+  height: var(--riemann-height) !important;
+
+  /* Stretch vertically across the entire parent section */
+  top: 25% !important;
+  bottom: 25% !important;
+  height: auto !important;
+
+  /* Anchor to the right side */
+  left: auto !important;
+  right: 0% !important;
+
+  /* Remove placement transforms */
+  transform: none !important;
+
+  /* Visualise the actual container */
+  /* outline: 2px solid #ff00ff !important;
+  outline-offset: 0;
+  background: rgb(255 0 255 / 8%); */
+
+  /*
+     Clip illustration overflow without creating
+     a scroll container or scrollbars., behaviour
+      of svg that spills outside the box. visible
+      is the best look , clip/hidden is most window styled.
+  */
   overflow: visible;
+
+  max-width: 100%;
 }
 
 
 /* =========================================================
-   03. SVG DIMENSIONS AND SCALING
+   04. SVG VIEWPORT
    ========================================================= */
 
 .riemannsurface--decorative svg {
-  position: absolute;
 
+  position: absolute;
   display: block;
 
-  width: calc(100% * var(--riemann-scale));
-  height: calc(100% * var(--riemann-scale));
+  width: 100%;
+  height: 100%;
 
   max-width: none;
+  max-height: none;
 
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
 
   overflow: visible;
 }
 
 
 /* =========================================================
-   04. SURFACE FILL
-   Theme-aware SVG surface shading
+   05. SURFACE FILL
    ========================================================= */
 
-    .riemannsurface--decorative .riemannsurface-fill,
-    .riemannsurface--decorative .riemannsurface-fill polygon,
-    .riemannsurface--decorative .riemannsurface-fill path,
-    .riemannsurface--decorative .riemannsurface-fill ellipse {
-    fill: var(--ink) !important;
-    fill-opacity: var(--riemann-fill-opacity) !important;
-    stroke: none !important;
+.riemannsurface--decorative
+svg > g:first-child polygon {
+
+  fill: var(--ink);
+  fill-opacity: var(--riemann-fill-opacity);
+
+  stroke: none;
 }
 
 
 /* =========================================================
-   05. WIREFRAME MESH
+   06. WIREFRAME MESH
    ========================================================= */
 
-   .riemannsurface--decorative .riemannsurface-mesh,
-   .riemannsurface--decorative .riemannsurface-mesh path {
-   fill: none;
+.riemannsurface--decorative
+svg > g:nth-child(1) polygon {
 
-  stroke: var(--riemann-mesh) !important;
-  stroke-width: var(--riemann-mesh-width) !important;
-  stroke-opacity: var(--riemann-mesh-opacity) !important;
+  vector-effect: non-scaling-stroke;
+}
+
+.riemannsurface--decorative
+svg > g:nth-child(2) path {
+
+  fill: none;
+
+  stroke: var(--riemann-mesh);
+  stroke-width: var(--riemann-mesh-width);
+  stroke-opacity: var(--riemann-mesh-opacity);
 
   stroke-linecap: round;
   stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
 }
 
 
 /* =========================================================
-   06. ACCENT CURVES
+   07. ACCENT CURVE
    ========================================================= */
 
-    .riemannsurface--decorative .riemannsurface-accent,
-    .riemannsurface--decorative .riemannsurface-accent path {
-    fill: none;
+.riemannsurface--decorative
+svg > g:nth-child(3) path {
 
-  stroke: var(--riemann-accent) !important;
-  stroke-width: var(--riemann-accent-width) !important;
-  stroke-opacity: var(--riemann-accent-opacity) !important;
+  fill: none;
+
+  stroke: var(--riemann-accent);
+  stroke-width: var(--riemann-accent-width);
+  stroke-opacity: var(--riemann-accent-opacity);
 
   stroke-linecap: round;
   stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
 }
 
 
 /* =========================================================
-   07. OPTIONAL FLOATING ALIGNMENT
+   08. CONTENT LAYERING
    ========================================================= */
 
-.riemannsurface--decorative.surface-float-right {
-  margin-left: 1.6rem;
-}
-
-.riemannsurface--decorative.surface-float-left {
-  margin-right: 1.6rem;
-}
-
-
-/* =========================================================
-   08. DESKTOP
-   ========================================================= */
-
-@media (min-width: 1200px) {
-
-  :root {
-    --riemann-width: clamp(400px, 38vw, 720px);
-    --riemann-height: clamp(250px, 24vw, 420px);
-    --riemann-scale: 1.5;
-    --riemann-opacity: 0.48;
-  }
-}
-
-
-/* =========================================================
-   09. TABLETS AND SMALL LAPTOPS
-   ========================================================= */
-
-@media (min-width: 681px) and (max-width: 1199px) {
-
-  :root {
-    --riemann-width: clamp(260px, 38vw, 460px);
-    --riemann-height: clamp(190px, 27vw, 300px);
-
-    --riemann-scale: 1.25;
-    --riemann-opacity: 0.30;
-
-    --riemann-fill-opacity: 0.07;
-    --riemann-mesh-opacity: 0.65;
-    --riemann-accent-opacity: 0.75;
-  }
-}
-
-
-/* =========================================================
-   10. MOBILE
-   ========================================================= */
-
-@media (max-width: 680px) {
-
-  :root {
-    --riemann-width: 220px;
-    --riemann-height: 180px;
-
-    --riemann-scale: 1.05;
-    --riemann-opacity: 0.18;
-
-    --riemann-fill-opacity: 0.05;
-    --riemann-mesh-opacity: 0.55;
-    --riemann-accent-opacity: 0.65;
-
-    --riemann-mesh-width: 0.7;
-    --riemann-accent-width: 0.95;
-  }
-
-  .riemannsurface--decorative {
-    max-width: 75vw;
-  }
-}
-
-
-/* =========================================================
-   11. SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  :root {
-    --riemann-width: 170px;
-    --riemann-height: 140px;
-
-    --riemann-scale: 1;
-    --riemann-opacity: 0.14;
-  }
-
-  .riemannsurface--decorative {
-    max-width: 65vw;
-  }
-}
-
-
-/* =========================================================
-   12. EXTRA-WIDE SCREENS
-   ========================================================= */
-
-@media (min-width: 1800px) {
-
-  :root {
-    --riemann-width: 760px;
-    --riemann-height: 440px;
-
-    --riemann-scale: 1.5;
-    --riemann-opacity: 0.45;
-  }
-}
-
-
-/* =========================================================
-   13. REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .riemannsurface--decorative {
-    animation: none;
-  }
-}
-
-
-/* =========================================================
-   14. INDIVIDUAL RIEMANN SURFACE PLACEMENT
-   About page composition
-   ========================================================= */
-
-/* Each section becomes its own positioning reference */
-
-.hero.math-anchor,
-#background,
-#background-education,
-#interests,
-#approach,
-#beyond-research,
-#contact {
-  position: relative;
-  isolation: isolate;
-}
-
-/* Keep decorative surfaces behind the content */
-
-.riemannsurface--decorative {
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Keep section content above illustrations */
-
-.hero.math-anchor > :not(.riemannsurface),
+.hero > :not(.riemannsurface),
 #background > :not(.riemannsurface),
 #background-education > :not(.riemannsurface),
 #interests > :not(.riemannsurface),
 #approach > :not(.riemannsurface),
 #beyond-research > :not(.riemannsurface),
 #contact > :not(.riemannsurface) {
+
   position: relative;
   z-index: 1;
 }
 
 
 /* =========================================================
-   HERO — TORUS
-   A large, quiet geometric object near the introduction
+   09. GENERIC PLACEMENT OPTIONS
+   Independent of mathematical surface type
    ========================================================= */
 
-.hero.math-anchor > .riemannsurface[data-surface="torus"] {
-  top: 5%;
-  right: 1%;
 
-  width: clamp(300px, 42vw, 620px);
-  height: clamp(220px, 30vw, 390px);
 
-  --riemann-scale: 1.45;
-  --riemann-opacity: 0.32;
-}
 
 
 /* =========================================================
-   BACKGROUND — SPHERE
-   A compact illustration on the right
+   10. LARGE SCREENS
+   1033px and above
    ========================================================= */
 
-#background > .riemannsurface[data-surface="sphere"] {
-  top: 15%;
-  right: 0;
+@media (min-width: 1033px) and (max-width: 1799px){
 
-  width: clamp(230px, 29vw, 440px);
-  height: clamp(190px, 23vw, 310px);
-
-  --riemann-scale: 1.35;
-  --riemann-opacity: 0.25;
-}
+  .riemannsurface--decorative {
 
 
-/* =========================================================
-   EDUCATION — CATENOID
-   A vertical form to balance the text
-   ========================================================= */
+    /* Preserve subtle mathematical drawing */
+    --riemann-drawing-scale: 0.55;
+    --riemann-opacity: 0.30;
 
-#background-education > .riemannsurface[data-surface="catenoid"] {
-  top: 10%;
-  left: 0;
+    /* Larger decorative frame */
+    --riemann-width: 40%;
 
-  width: clamp(230px, 30vw, 420px);
-  height: clamp(240px, 29vw, 390px);
+    /* Container dimensions */
+    width: var(--riemann-width) !important;
+    height: var(--riemann-height) !important;
 
-  --riemann-scale: 1.35;
-  --riemann-opacity: 0.28;
-}
+    /* Stretch vertically across the entire parent section */
+    top: 25% !important;
+    bottom: 25% !important;
+    height: auto !important;
 
+    /* Anchor to the right side */
+    left: auto !important;
+    right: 0% !important;
 
-/* =========================================================
-   INTERESTS — HELICOID
-   A more dynamic surface beside the list
-   ========================================================= */
+    /* Remove placement transforms */
+    transform: none !important;
 
-#interests > .riemannsurface[data-surface="helicoid"] {
-  top: 12%;
-  right: 0;
-
-  width: clamp(260px, 34vw, 480px);
-  height: clamp(220px, 27vw, 360px);
-
-  --riemann-scale: 1.4;
-  --riemann-opacity: 0.30;
-}
-
-
-/* =========================================================
-   APPROACH — ENNEPER SURFACE
-   A compact mathematical illustration
-   ========================================================= */
-
-#approach > .riemannsurface[data-surface="enneper"] {
-  top: 18%;
-  left: 1%;
-
-  width: clamp(230px, 30vw, 410px);
-  height: clamp(190px, 24vw, 320px);
-
-  --riemann-scale: 1.35;
-  --riemann-opacity: 0.25;
-}
-
-
-/* =========================================================
-   BEYOND RESEARCH — KLEIN BOTTLE
-   A distinctive form near the closing text
-   ========================================================= */
-
-#beyond-research > .riemannsurface[data-surface="klein-bottle"] {
-  top: 8%;
-  right: 0;
-
-  width: clamp(260px, 35vw, 490px);
-  height: clamp(220px, 28vw, 370px);
-
-  --riemann-scale: 1.4;
-  --riemann-opacity: 0.28;
-}
-
-
-/* =========================================================
-   CONTACT — MOBIUS STRIP
-   A final, restrained geometric signature
-   ========================================================= */
-
-#contact > .riemannsurface[data-surface="mobius"] {
-  top: 0;
-  right: 2%;
-
-  width: clamp(220px, 28vw, 380px);
-  height: clamp(170px, 21vw, 280px);
-
-  --riemann-scale: 1.3;
-  --riemann-opacity: 0.25;
-}
-
-
-/* =========================================================
-   15. TABLETS
-   ========================================================= */
-
-@media (min-width: 681px) and (max-width: 1199px) {
-
-  #background > .riemannsurface,
-  #background-education > .riemannsurface,
-  #interests > .riemannsurface,
-  #approach > .riemannsurface,
-  #beyond-research > .riemannsurface,
-  #contact > .riemannsurface {
-    --riemann-opacity: 0.17;
-    --riemann-scale: 1.1;
-  }
-
-  .hero.math-anchor > .riemannsurface {
-    right: -2%;
-    --riemann-opacity: 0.22;
-    --riemann-scale: 1.15;
+    /* Visualise the actual container */
+    /* outline: 2px solid #ff00ff !important;
+    outline-offset: 0;
+    background: rgb(255 0 255 / 8%); */
   }
 
 }
 
 
 /* =========================================================
-   16. MOBILE
-   Keep illustrations small and away from important text
+   11. EXTRA-WIDE SCREENS
+   1800px and above
    ========================================================= */
 
-@media (max-width: 680px) {
+@media (min-width: 1800px) {
 
-  .hero.math-anchor > .riemannsurface {
-    top: 2%;
-    right: -2%;
+  .riemannsurface--decorative {
 
-    width: 190px;
-    height: 150px;
 
+    --riemann-drawing-scale: 0.55;
+
+    /* Larger decorative frame */
+    --riemann-width: 40%;
+
+    /* Container dimensions */
+    width: var(--riemann-width) !important;
+    height: var(--riemann-height) !important;
+
+    /* Stretch vertically across the entire parent section */
+    top: 25% !important;
+    bottom: 25% !important;
+    height: auto !important;
+
+    /* Anchor to the right side */
+    left: auto !important;
+    right: 0% !important;
+
+    /* Remove placement transforms */
+    transform: none !important;
+
+    /* Visualise the actual container */
+    /* outline: 2px solid #ff00ff !important;
+    outline-offset: 0;
+    background: rgb(255 0 255 / 8%); */
+  }
+
+}
+
+
+/* =========================================================
+   12. TABLETS
+   681px â€“ 1032px
+   ========================================================= */
+
+@media (min-width: 681px) and (max-width: 1032px) {
+
+  .riemannsurface--decorative {
+
+    --riemann-drawing-scale: 0.43;
+    --riemann-opacity: 0.20;
+
+    /* Larger decorative frame */
+    --riemann-width: 40%;
+
+    /* Container dimensions */
+    width: var(--riemann-width) !important;
+    height: var(--riemann-height) !important;
+
+    /* Stretch vertically across the entire parent section */
+    top: 25% !important;
+    bottom: 25% !important;
+    height: auto !important;
+
+    /* Anchor to the right side */
+    left: auto !important;
+    right: 0% !important;
+
+    /* Remove placement transforms */
+    transform: none !important;
+
+    /* Visualise the actual container */
+    /* outline: 2px solid #ff00ff !important;
+    outline-offset: 0;
+    background: rgb(255 0 255 / 8%); */
+  }
+
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+   381px â€“ 680px
+   ========================================================= */
+
+@media (min-width: 381px) and (max-width: 680px) {
+
+  .riemannsurface--decorative {
+
+    --riemann-drawing-scale: 0.38;
     --riemann-opacity: 0.12;
-    --riemann-scale: 1;
-  }
 
-  #background > .riemannsurface,
-  #background-education > .riemannsurface,
-  #interests > .riemannsurface,
-  #approach > .riemannsurface,
-  #beyond-research > .riemannsurface,
-  #contact > .riemannsurface {
-    width: 160px;
-    height: 130px;
+    /* Larger decorative frame */
+    --riemann-width: 40%;
 
-    --riemann-opacity: 0.10;
-    --riemann-scale: 1;
-  }
+    /* Container dimensions */
+    width: var(--riemann-width) !important;
+    height: var(--riemann-height) !important;
 
-  #background > .riemannsurface,
-  #interests > .riemannsurface,
-  #beyond-research > .riemannsurface,
-  #contact > .riemannsurface {
-    right: 0;
-    left: auto;
-  }
+    /* Stretch vertically across the entire parent section */
+    top: 25% !important;
+    bottom: 25% !important;
+    height: auto !important;
 
-  #background-education > .riemannsurface,
-  #approach > .riemannsurface {
-    left: 0;
-    right: auto;
+    /* Anchor to the right side */
+    left: auto !important;
+    right: 0% !important;
+
+    /* Remove placement transforms */
+    transform: translateY(-50%) !important;
+
+    /* Visualise the actual container */
+    /* outline: 2px solid #ff00ff !important;
+    outline-offset: 0;
+    background: rgb(255 0 255 / 8%); */
   }
 
 }
 
 
 /* =========================================================
-   17. VERY SMALL SCREENS
+   14. SMALL MOBILE
+   380px and below
    ========================================================= */
 
 @media (max-width: 380px) {
 
   .riemannsurface--decorative {
-    opacity: 0.07;
-    width: 125px !important;
-    height: 105px !important;
+
+    --riemann-drawing-scale: 0.34;
+    --riemann-opacity: 0.09;
+
+    /* Larger decorative frame */
+    --riemann-width: 40%;
+
+    /* Container dimensions */
+    width: var(--riemann-width) !important;
+    height: var(--riemann-height) !important;
+
+    /* Stretch vertically across the entire parent section */
+    top: 25% !important;
+    bottom: 25% !important;
+    height: auto !important;
+
+    /* Anchor to the right side */
+    left: auto !important;
+    right: 0% !important;
+
+    /* Remove placement transforms */
+    transform: translateY(-50%) !important;
+
+    /* Visualise the actual container */
+    /* outline: 2px solid #ff00ff !important;
+    outline-offset: 0;
+    background: rgb(255 0 255 / 8%); */
   }
 
 }
+
+
+/* =========================================================
+   15. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .riemannsurface--decorative {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   END OF RIEMANN SURFACE STYLES
+   ========================================================= */

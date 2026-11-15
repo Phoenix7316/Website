@@ -18,11 +18,11 @@
   --muted: #706e67;
   --red: #d52b1e;
   --line: #d8d4ca;
-  --white: #fffefa;
+  --white: #1f1d12;
 
   /* Surface colours */
-  --surface: #fffefa;
-  --surface-secondary: #eeece5;
+  --surface: #121211;
+  --surface-secondary: #5f5e57;
 
   /* Code colours */
   --code-bg: #eae7de;
@@ -267,6 +267,21 @@ html[data-theme="dark"][data-dark-palette="graphite"] {
   --code-text: #F0ECE3;
 }
 
+/* =========================================
+   THEME RANDOMISER BUTTON
+========================================= */
+
+.theme-randomizer {
+  margin-left: 2px;
+}
+
+.theme-randomizer:hover .theme-icon {
+  transform: rotate(350deg);
+}
+
+.theme-randomizer .theme-icon {
+  transition: transform 250ms ease;
+}
 
 /* =========================================
    GLOBAL RESET
@@ -1218,152 +1233,221 @@ h3 {
 }
 
 
+
 /* =============================================
    19. TABLET LAYOUT
-   681px TO 1300px
-   ============================================= */
+   681px–1024px
+============================================= */
 
-@media (min-width: 681px) and (max-width: 1300px) {
+@media (min-width: 681px) and (max-width: 1024px) {
 
   :root {
-    --page-gutter: 32px;
-    --section-gap: 28px;
-    --section-padding: 48px;
+    --page-gutter: 30px;
+    --content-width: 100%;
   }
 
-  /* Site header */
+  /* Header */
+
+  .site-header,
+  .site-footer {
+    padding-inline: var(--page-gutter);
+  }
 
   .site-header {
-    align-items: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .navigation {
-    gap: 0.8rem;
+    gap: 0.8rem 1rem;
   }
 
-  /* General sections */
+  .navigation a {
+    font-size: 0.95rem;
+  }
+
+  /* Main content */
+
+  .site-main {
+    width: calc(100% - 2 * var(--page-gutter));
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: auto;
+    padding-block: 6rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+  }
+
+  /* Sections */
 
   .section {
-    grid-template-columns:
-      minmax(150px, 0.32fr)
-      minmax(0, 1fr);
+    grid-template-columns: minmax(130px, 0.7fr) minmax(0, 2fr);
+    gap: 2rem;
+    padding-block: 3rem;
   }
 
   .entry {
-    grid-template-columns:
-      minmax(115px, 0.3fr)
-      minmax(0, 1fr);
+    grid-template-columns: minmax(100px, 0.6fr) minmax(0, 2fr);
+    gap: 1.25rem;
   }
 
-  /* General hero */
-
-  .hero {
-    min-height: 65vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* Post layout */
+  /* Posts */
 
   .post-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .post-header,
+  .post-content {
+    width: 100%;
+    max-width: 740px;
+    min-width: 0;
   }
 
   .post-header {
-    width: 100%;
-    max-width: 740px;
-
-    padding-block: 6rem 3rem;
+    padding-block: 5rem 2.5rem;
   }
 
   .post-title {
     font-size: clamp(3rem, 7vw, 5rem);
   }
 
-  /* TOC — UNCHANGED */
-
-  .post-toc {
-    position: static;
-
-    width: 230px;
-    max-width: calc(100% - 32px);
-    max-height: none;
-
-    margin: 1rem 32px 0 0;
-    padding: 1.2rem 1rem;
-
-    border: 1px solid var(--line);
-    background: transparent;
-  }
-
   .post-content {
-    width: 100%;
-    max-width: 740px;
-
     font-size: 19px;
-    line-height: 1.8;
-  }
-
-  .post-content h2 {
-    font-size: clamp(2rem, 4vw, 2.6rem);
-    margin-top: 3.5rem;
-  }
-
-  .post-content h3 {
-    font-size: 1.65rem;
   }
 
   .post-references,
   .post-footer {
+    width: 100%;
     max-width: 740px;
   }
+
 }
 
 
 /* =============================================
    20. MOBILE LAYOUT
    680px AND BELOW
-   ============================================= */
+============================================= */
 
 @media (max-width: 680px) {
 
   :root {
-    --page-gutter: 20px;
-    --section-padding: 40px;
+    --page-gutter: 18px;
+    --content-width: 100%;
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    font-size: 17px;
+    line-height: 1.7;
   }
 
   /* Header and footer */
 
   .site-header,
   .site-footer {
+    width: 100%;
+    padding: 1rem var(--page-gutter);
+    gap: 1rem;
+  }
+
+  .site-header {
     align-items: flex-start;
     flex-direction: column;
+  }
 
-    padding-inline: var(--page-gutter);
+  .wordmark {
+    font-size: 1.1rem;
   }
 
   .navigation {
-    gap: 0.7rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
   }
 
-  /* General sections */
+  .navigation a {
+    font-size: 0.9rem;
+  }
+
+  /* Main container */
+
+  .site-main {
+    width: calc(100% - 2 * var(--page-gutter));
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* General headings */
+
+  h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: auto;
+    padding-block: 4rem 3rem;
+  }
+
+  .hero-links {
+    gap: 1rem;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+  }
+
+  /* Sections */
 
   .section {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 2.5rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
   }
 
   .entry {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+    padding-block: 1.25rem;
   }
 
-  /* Post layout */
+  /* Posts */
+
+  .post,
+  .post-layout {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 
   .post-layout {
     display: flex;
@@ -1374,97 +1458,67 @@ h3 {
   .post-header {
     width: 100%;
     max-width: none;
-
-    padding-block: 4rem 2rem;
+    min-width: 0;
+    padding-block: 3.5rem 2rem;
   }
 
   .post-meta {
-    gap: 0.6rem;
-    font-size: 0.68rem;
+    gap: 0.5rem;
+    font-size: 0.65rem;
   }
 
   .post-title {
-    font-size: clamp(2.7rem, 12vw, 4rem);
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
     line-height: 1.08;
+    overflow-wrap: anywhere;
   }
 
   .post-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
   }
-
-  /* TOC — UNCHANGED */
-
-  .post-toc {
-    position: static;
-
-    width: 100%;
-    max-width: none;
-    max-height: none;
-
-    margin: 0 0 2rem;
-    padding: 1rem 1.25rem;
-
-    border: 1px solid var(--line);
-    background: transparent;
-  }
-
-  .post-toc a {
-    font-size: 0.82rem;
-  }
-
-  /* Article */
 
   .post-content {
     width: 100%;
-    max-width: none;
-
-    font-size: 18px;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 17px;
     line-height: 1.8;
   }
 
   .post-content h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.2rem;
-
-    font-size: 2rem;
+    font-size: 1.9rem;
+    margin-top: 3rem;
   }
 
   .post-content h3 {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    margin-top: 2.3rem;
   }
 
-  .post-content p {
-    margin-bottom: 1.4rem;
+  /* Media and wide content */
+
+  .post-content img,
+  .post-content video,
+  .post-content iframe {
+    max-width: 100%;
   }
 
-  .post-content blockquote {
-    padding-left: 1rem;
-    font-size: 1rem;
-  }
-
-  /* Equations */
-
+  .post-content pre,
+  .post-content table,
   .post-content .MathJax_Display,
   .post-content .katex-display,
   .post-content mjx-container[display="true"] {
-    overflow-x: auto;
     max-width: 100%;
-    font-size: 0.9em;
   }
 
-  /* Tables and code */
-
+  .post-content pre,
   .post-content table {
-    display: block;
-    max-width: 100%;
     overflow-x: auto;
   }
 
-  .post-content pre {
-    padding: 1rem;
-    font-size: 0.8rem;
+  .post-content figure {
+    max-width: 100%;
+    margin-inline: 0;
   }
 
   /* References and footer */
@@ -1472,27 +1526,51 @@ h3 {
   .post-references,
   .post-footer {
     width: 100%;
-  }
-
-  .post-divider {
-    margin-top: 2rem;
+    max-width: 100%;
   }
 
   /* Mathematical decorations */
 
   .math-float {
-    font-size: 1.1rem;
-    opacity: 0.25;
+    font-size: 1rem;
+    opacity: 0.22;
   }
 
   .math-float.large {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
+
 }
 
 
 /* =============================================
-   21. RESPONSIVE TRANSITIONS
+   21. VERY SMALL MOBILE SCREENS
+   400px AND BELOW
+============================================= */
+
+@media (max-width: 400px) {
+
+  :root {
+    --page-gutter: 14px;
+  }
+
+  .post-title {
+    font-size: 2.5rem;
+  }
+
+  .post-content {
+    font-size: 16px;
+  }
+
+  .site-footer {
+    font-size: 0.72rem;
+  }
+
+}
+
+
+/* =============================================
+   22. RESPONSIVE TRANSITIONS
    ============================================= */
 
 .site-main,
@@ -1509,7 +1587,7 @@ h3 {
 
 
 /* =============================================
-   22. THEME COLOUR TRANSITIONS
+   23. THEME COLOUR TRANSITIONS
    ============================================= */
 
 body,
@@ -1522,21 +1600,21 @@ body,
 .post-content code,
 .site-main pre {
   transition:
-    background-color 250ms ease,
-    color 250ms ease,
-    border-color 250ms ease;
+    background-color 20ms ease,
+    color 20ms ease,
+    border-color 20ms ease;
 }
 
 a,
 button {
   transition:
-    color 200ms ease,
-    background-color 200ms ease;
+    color 20ms ease,
+    background-color 20ms ease;
 }
 
 
 /* =============================================
-   23. REDUCED MOTION ACCESSIBILITY
+   24. REDUCED MOTION ACCESSIBILITY
    ============================================= */
 
 @media (prefers-reduced-motion: reduce) {

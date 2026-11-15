@@ -5,16 +5,16 @@ math: true
 ---
 
 <section class="hero">
-<p class="eyebrow">05 / CONTACT</p>
 <div class="riemannsurface riemannsurface--decorative"
      data-surface="catenoid"
-     style="top: 8%; right: 5%;">
+     data-placement="center-right">
 </div>
+<p class="eyebrow">04 / CONTACT</p>
 <h1>Let's <span class="accent">connect.</span></h1>
 
 <p class="lede">
-For research discussions, academic correspondence, or potential
-collaborations in theoretical physics, I welcome hearing 
+For research discussions, academic correspondence, or exchange of 
+ideas in physics and mathematics, I welcome hearing 
 from you.
 </p>
 <div class="hero-links">
@@ -31,7 +31,7 @@ from you.
 
 <div class="section-content">
 <p>
-I am happy to hear from students, researchers, and academics
+I am always happy to hear from fellow students, researchers, and academics
 interested in theoretical high-energy physics, and related areas
 of mathematical physics.
 </p>

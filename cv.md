@@ -7,7 +7,7 @@ math: true
 <section class="hero">
 <div class="riemannsurface riemannsurface--decorative"
      data-surface="mobius"
-     style="top: 4%; right: 5%;">
+     data-placement="center-right">
 </div>
 <p class="eyebrow">03 / CURRICULUM VITAE</p>
 
@@ -26,11 +26,11 @@ methods, and professional development in theoretical physics.
 <a class="text-link" href="#contact">Contact ↘</a>
 </div>
 
-<div style="margin-top: 2.5rem;">
+<!-- <div style="margin-top: 2.5rem;">
 <a class="text-link" href="{{ '/docs/pdfs/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">
 Download full CV (PDF) ↓
 </a>
-</div>
+</div> -->
 </section>
 
 <section class="section" id="education">
@@ -358,15 +358,10 @@ For academic enquiries, research discussions, or collaboration
 opportunities, please visit my profile for contact information.
 </p>
 
-
-<a class="text-link" href="{{ '/about/' | relative_url }}">
-  About & contact ↗
-</a>
-
-<p style="margin-top: 2rem;">
+<!-- <p style="margin-top: 2rem;">
   <a class="text-link" href="{{ '/docs/pdfs/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">
     Download curriculum vitae (PDF) ↓
   </a>
-</p>
+</p> -->
 </div>
 </section>

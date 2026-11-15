@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
 
@@ -10,7 +9,7 @@
   ).matches;
 
   // ==================================================
-  // 1. SURFACE DEFINITIONS
+  // 01. SURFACE DEFINITIONS
   // ==================================================
 
   const SURFACES = {
@@ -107,29 +106,43 @@
       ]
     },
 
-    // 07. Sphere
-    "sphere": {
-      u: [0, TAU],
-      v: [-Math.PI / 2, Math.PI / 2],
-      point: (u, v) => [
-        Math.cos(v) * Math.cos(u),
-        Math.cos(v) * Math.sin(u),
-        Math.sin(v)
-      ]
+    // 07. Scherk's first minimal surface
+    "scherk-first": {
+        u: [-1.4, 1.4],
+        v: [-1.4, 1.4],
+
+        point: (u, v) => {
+          const d = Math.sqrt(
+            1 + Math.cosh(u) ** 2 * Math.cosh(v) ** 2
+          );
+
+          return [
+            u,
+            v,
+            Math.log(
+              Math.cosh(v) / Math.cosh(u)
+            )
+          ];
+        }
+      },
+
+    // 08. Scherk's second (doubly periodic) minimal surface
+    "scherk-second": {
+      u: [-1.4, 1.4],
+      v: [0, TAU],
+
+      point: (u, v) => {
+        const d = Math.cosh(u) - Math.cos(v);
+
+        return [
+          Math.sinh(u) * Math.cos(v) / d,
+          Math.sinh(u) * Math.sin(v) / d,
+          Math.log(d)
+        ];
+      }
     },
 
-    // 08. Ellipsoid
-    "ellipsoid": {
-      u: [0, TAU],
-      v: [-Math.PI / 2, Math.PI / 2],
-      point: (u, v) => [
-        1.25 * Math.cos(v) * Math.cos(u),
-        0.75 * Math.cos(v) * Math.sin(u),
-        0.95 * Math.sin(v)
-      ]
-    },
-
-    // 09. Hyperbolic paraboloid (saddle)
+    // 09. Hyperbolic paraboloid
     "saddle": {
       u: [-1.4, 1.4],
       v: [-1.4, 1.4],
@@ -206,7 +219,7 @@
       ]
     },
 
-    // 15. Dini surface
+        // 15. Dini surface
     "dini": {
       u: [0.15, 4.5 * Math.PI],
       v: [0.15, 1.35],
@@ -217,11 +230,48 @@
           Math.cos(v) + Math.log(Math.tan(v / 2))
         ) + 0.12 * u
       ]
+    },
+
+    // 16. Henneberg surface
+    "henneberg": {
+      u: [-1.4, 1.4],
+      v: [-Math.PI, Math.PI],
+      point: (u, v) => [
+        2 * Math.sinh(u) * Math.cos(v)
+          - (2 / 3) * Math.sinh(3 * u) * Math.cos(3 * v),
+
+        2 * Math.sinh(u) * Math.sin(v)
+          + (2 / 3) * Math.sinh(3 * u) * Math.sin(3 * v),
+
+        2 * Math.cosh(2 * u) * Math.cos(2 * v)
+      ]
+    },
+    
+    // 17. Kuen surface
+    "kuen": {
+      u: [-4.5, 4.5],
+      v: [-2.0, 2.0],
+
+      point: (u, v) => {
+        const ch = Math.cosh(v);
+        const sh = Math.sinh(v);
+        const denominator = ch * ch + u * u;
+
+        return [
+          2 * ch * (Math.cos(u) + u * Math.sin(u))
+            / denominator,
+
+          2 * ch * (-u * Math.cos(u) + Math.sin(u))
+            / denominator,
+
+          v - (2 * sh * ch) / denominator
+        ];
+      }
     }
   };
 
   // ==================================================
-  // 2. RENDERING SETTINGS
+  // 02. RENDERING SETTINGS
   // ==================================================
 
   const SETTINGS = {
@@ -229,23 +279,21 @@
     vSegments: 10,
     curveSamples: 90,
 
-    // Bright neutral wiremesh
     meshColour: "#D0D0D0",
     meshWidth: "1.0",
     meshOpacity: "0.95",
 
-    // Theme-aware accent curve
     accentColour: "var(--red)",
     accentWidth: "1.5",
 
-    // Theme-aware surface shading
     surfaceOpacity: 0.30,
 
     rotationSpeed: 0.17
   };
 
+
   // ==================================================
-  // 3. THREE-DIMENSIONAL ROTATION
+  // 03. THREE-DIMENSIONAL ROTATION
   // ==================================================
 
   function rotate(point, ax, ay, az) {
@@ -278,8 +326,9 @@
     return [x1, y1, z];
   }
 
+
   // ==================================================
-  // 4. SVG HELPERS
+  // 04. SVG HELPERS
   // ==================================================
 
   function svgElement(name) {
@@ -302,8 +351,64 @@
     return path;
   }
 
+
   // ==================================================
-  // 5. CREATE ONE SURFACE
+  // 05. AUTOMATIC SVG VIEWBOX
+  // ==================================================
+
+  function calculateSurfaceViewBox(definition) {
+    const samplesU = 128;
+    const samplesV = 64;
+
+    let maxRadius = 0;
+
+    for (let i = 0; i <= samplesU; i++) {
+      const u = definition.u[0]
+        + (i / samplesU) * (definition.u[1] - definition.u[0]);
+
+      for (let j = 0; j <= samplesV; j++) {
+        const v = definition.v[0]
+          + (j / samplesV) * (definition.v[1] - definition.v[0]);
+
+        const point = definition.point(u, v);
+
+        const radius = Math.hypot(
+          point[0],
+          point[1],
+          point[2]
+        );
+
+        maxRadius = Math.max(maxRadius, radius);
+      }
+    }
+
+    const safeRadius = maxRadius * 1.10;
+    const minimumPerspective = 1.65 - safeRadius * 0.10;
+
+    if (minimumPerspective <= 0) {
+      console.warn(
+        "Surface exceeds the supported projection range."
+      );
+
+      return "-4 -4 8 8";
+    }
+
+    const projectedRadius = safeRadius / minimumPerspective;
+
+    const halfWidth = projectedRadius * 1.12;
+    const halfHeight = projectedRadius * 0.88 * 1.12;
+
+    return [
+      -halfWidth,
+      -halfHeight,
+      halfWidth * 2,
+      halfHeight * 2
+    ].join(" ");
+  }
+
+
+  // ==================================================
+  // 06. CREATE ONE SURFACE
   // ==================================================
 
   function createSurface(element) {
@@ -311,42 +416,132 @@
     const definition = SURFACES[name];
 
     if (!definition) {
-      console.warn(
-        `Unknown Riemann surface: "${name}".`,
-        `Available surfaces: ${Object.keys(SURFACES).join(", ")}`
-      );
+      console.warn(`Unknown Riemann surface: "${name}".`);
       return () => {};
     }
 
-    // Prevent accidental duplicate initialisation.
     if (element.dataset.surfaceReady === "true") {
       return () => {};
     }
 
     element.dataset.surfaceReady = "true";
 
-    const SVG_SCALE = 3.0;
+
+    // --------------------------------------------------
+    // SVG VIEWPORT
+    // --------------------------------------------------
 
     const svg = svgElement("svg");
 
-    svg.setAttribute("viewBox", "-2.4 -2.0 4.8 4.0");
+    const viewBox = calculateSurfaceViewBox(definition);
+
+    svg.setAttribute("viewBox", viewBox);
     svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
     svg.setAttribute("aria-hidden", "true");
 
-    svg.style.width = `${SVG_SCALE * 100}%`;
-    svg.style.height = `${SVG_SCALE * 100}%`;
-
+    svg.style.width = "100%";
+    svg.style.height = "100%";
     svg.style.position = "absolute";
-    svg.style.left = "50%";
-    svg.style.top = "50%";
-    svg.style.transform = "translate(-50%, -50%)";
+    svg.style.left = "0";
+    svg.style.top = "0";
+
+
+    // --------------------------------------------------
+    // VIEWBOX CENTRE
+    // --------------------------------------------------
+
+    const [viewX, viewY, viewWidth, viewHeight] =
+      viewBox.split(/\s+/).map(Number);
+
+    const centreX = viewX + viewWidth / 2;
+    const centreY = viewY + viewHeight / 2;
+
+
+    // --------------------------------------------------
+    // SVG DRAWING GROUPS
+    // --------------------------------------------------
+
+    const drawingGroup = svgElement("g");
+
+    drawingGroup.setAttribute(
+      "class",
+      "riemannsurface-drawing"
+    );
 
     const fillGroup = svgElement("g");
     const meshGroup = svgElement("g");
     const accentGroup = svgElement("g");
 
-    svg.append(fillGroup, meshGroup, accentGroup);
+    drawingGroup.append(
+      fillGroup,
+      meshGroup,
+      accentGroup
+    );
+
+    svg.appendChild(drawingGroup);
     element.appendChild(svg);
+
+
+    // ==================================================
+    // 07. DYNAMIC DRAWING SCALE
+    // ==================================================
+
+    function updateDrawingScale() {
+      const styles = getComputedStyle(element);
+
+      let scale = parseFloat(
+        styles.getPropertyValue("--riemann-drawing-scale")
+      );
+
+      if (!Number.isFinite(scale)) {
+        scale = 1;
+      }
+
+      // Prevent accidental zero or extreme scaling.
+      scale = Math.max(0.10, Math.max(scale, 2.5));
+
+      /*
+       * Scale around the centre of the calculated viewBox.
+       *
+       * x' = centreX + scale * (x - centreX)
+       * y' = centreY + scale * (y - centreY)
+       *
+       * This keeps every surface centred regardless of
+       * its geometry or mathematical parameterisation.
+       */
+
+      const translateX = centreX * (1 - scale);
+      const translateY = centreY * (1 - scale);
+
+      drawingGroup.setAttribute(
+        "transform",
+        `translate(${translateX} ${translateY}) scale(${scale})`
+      );
+    }
+
+    // Apply the initial responsive scale.
+    updateDrawingScale();
+
+    // Observe container changes.
+    let resizeObserver = null;
+
+    if ("ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(() => {
+        updateDrawingScale();
+      });
+
+      resizeObserver.observe(element);
+    }
+
+    // Also handle viewport and media-query changes.
+    window.addEventListener("resize", updateDrawingScale, {
+      passive: true
+    });
+
+
+    // ==================================================
+    // 08. PARAMETRIC DOMAIN
+    // ==================================================
 
     const [uMin, uMax] = definition.u;
     const [vMin, vMax] = definition.v;
@@ -354,9 +549,10 @@
     const U = SETTINGS.uSegments;
     const V = SETTINGS.vSegments;
 
-    // --------------------------------------------------
-    // PROJECT A SURFACE POINT
-    // --------------------------------------------------
+
+    // ==================================================
+    // 09. THREE-DIMENSIONAL PROJECTION
+    // ==================================================
 
     function project(u, v, time) {
       const point = definition.point(u, v);
@@ -377,9 +573,10 @@
       };
     }
 
-    // --------------------------------------------------
-    // SURFACE CELLS
-    // --------------------------------------------------
+
+    // ==================================================
+    // 10. SURFACE CELLS
+    // ==================================================
 
     const cells = [];
 
@@ -388,7 +585,10 @@
         const polygon = svgElement("polygon");
 
         polygon.setAttribute("stroke", "none");
-        polygon.setAttribute("vector-effect", "non-scaling-stroke");
+        polygon.setAttribute(
+          "vector-effect",
+          "non-scaling-stroke"
+        );
 
         fillGroup.appendChild(polygon);
 
@@ -396,9 +596,10 @@
       }
     }
 
-    // --------------------------------------------------
-    // WIREFRAME CURVES
-    // --------------------------------------------------
+
+    // ==================================================
+    // 11. WIREFRAME CURVES
+    // ==================================================
 
     const meshCurves = [];
 
@@ -438,9 +639,10 @@
       "0.99"
     );
 
-    // --------------------------------------------------
-    // COLOUR THE SURFACE
-    // --------------------------------------------------
+
+    // ==================================================
+    // 12. SURFACE COLOUR
+    // ==================================================
 
     function cellColour(u, v) {
       const pattern = Math.sin(u * 1.4 + v * 1.1);
@@ -450,9 +652,10 @@
         : "var(--riemann-neutral)";
     }
 
-    // --------------------------------------------------
-    // DRAW THE SURFACE CELLS
-    // --------------------------------------------------
+
+    // ==================================================
+    // 13. DRAW SURFACE CELLS
+    // ==================================================
 
     function drawSurface(time) {
       const ordered = [];
@@ -487,7 +690,6 @@
         });
       });
 
-      // Painter's algorithm: far cells first.
       ordered.sort((a, b) => a.depth - b.depth);
 
       ordered.forEach(cell => {
@@ -505,14 +707,14 @@
           SETTINGS.surfaceOpacity
         );
 
-        // Reordering SVG elements establishes draw order.
         fillGroup.appendChild(cell.polygon);
       });
     }
 
-    // --------------------------------------------------
-    // DRAW A GRID CURVE
-    // --------------------------------------------------
+
+    // ==================================================
+    // 14. DRAW GRID CURVES
+    // ==================================================
 
     function makeCurve(type, value, time) {
       const points = [];
@@ -536,9 +738,10 @@
       ).join(" ");
     }
 
-    // --------------------------------------------------
-    // DRAW THE WIREFRAME
-    // --------------------------------------------------
+
+    // ==================================================
+    // 15. DRAW WIREFRAME
+    // ==================================================
 
     function drawMesh(time) {
       meshCurves.forEach(curve => {
@@ -548,7 +751,6 @@
         );
       });
 
-      // Highlight the middle longitudinal curve.
       const middleV = (vMin + vMax) / 2;
 
       accentPath.setAttribute(
@@ -557,9 +759,10 @@
       );
     }
 
-    // --------------------------------------------------
-    // COMPLETE FRAME
-    // --------------------------------------------------
+
+    // ==================================================
+    // 16. COMPLETE FRAME
+    // ==================================================
 
     function draw(time) {
       drawSurface(time);
@@ -568,9 +771,10 @@
 
     draw(0);
 
-    // --------------------------------------------------
-    // ANIMATION LIFECYCLE
-    // --------------------------------------------------
+
+    // ==================================================
+    // 17. ANIMATION LIFECYCLE
+    // ==================================================
 
     let frame = null;
     let startTime = null;
@@ -611,22 +815,40 @@
 
     start();
 
-    return stop;
+
+    // ==================================================
+    // 18. CLEANUP
+    // ==================================================
+
+    return () => {
+      stop();
+
+      window.removeEventListener(
+        "resize",
+        updateDrawingScale
+      );
+
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+    };
   }
 
+
   // ==================================================
-  // 6. INITIALISE REQUESTED SURFACES
+  // 19. INITIALISE SURFACES
   // ==================================================
 
   const cleanups = [];
 
-  document.querySelectorAll(".riemannsurface[data-surface]")
+  document
+    .querySelectorAll(".riemannsurface[data-surface]")
     .forEach(element => {
       cleanups.push(createSurface(element));
     });
 
   window.addEventListener("pagehide", () => {
-    cleanups.forEach(stop => stop());
+    cleanups.forEach(cleanup => cleanup());
   });
 
 })();

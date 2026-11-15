@@ -7,8 +7,8 @@ math: true
 <section class="hero">
 <p class="eyebrow">02 /RESEARCH · WRITING · PRESENTATIONS</p>
 <div class="riemannsurface riemannsurface--decorative"
-     data-surface="cross-cap"
-     style="top: 7%; right: 3%;">
+     data-surface="dini"
+     data-placement="center-right">
 </div>
 <h1>Ideas into<br><span class="accent">understanding.</span></h1>
 
@@ -19,23 +19,23 @@ publications, manuscripts, thesis, and academic presentations.
 </p>
 
 <div class="hero-links">
-<a class="text-link" href="#journal-articles">Journal articles ↘</a>
-<a class="text-link" href="#preprints">Preprints ↘</a>
-<a class="text-link" href="#thesis">Thesis ↘</a>
+<!-- <a class="text-link" href="#journal-articles">Journal articles ↘</a>
+<a class="text-link" href="#preprints">Preprints ↘</a> -->
 <a class="text-link" href="#presentations">Presentations ↘</a>
+<a class="text-link" href="#thesis">Thesis ↘</a>
 </div>
 </section>
 
-<section class="section" id="journal-articles">
+<!-- <section class="section" id="journal-articles">
 <div class="section-heading">
 <p class="section-number">01 / PUBLICATIONS</p>
 <h2>Journal articles</h2>
 </div>
 
-<div class="section-content">
+<div class="section-content"> -->
 
 
-<article class="publication">
+<!-- <article class="publication">
   <p class="publication-type">JOURNAL ARTICLE / YEAR</p>
 
   <h3>Title of the research paper</h3>
@@ -58,10 +58,10 @@ publications, manuscripts, thesis, and academic presentations.
     &nbsp;&nbsp;
     <a class="text-link" href="https://doi.org/example">DOI ↗</a>
   </p>
-</article>
+</article> -->
 
 <!-- Add further journal articles using the same structure. -->
-</div>
+<!-- </div>
 </section>
 
 <section class="section" id="preprints">
@@ -92,49 +92,17 @@ publications, manuscripts, thesis, and academic presentations.
       Read preprint ↗
     </a>
   </p>
-</article>
+</article> -->
 
 <!-- Add further preprints and manuscripts here. -->
-</div>
-</section>
-
-<section class="section" id="thesis">
-<div class="section-heading">
-<p class="section-number">03 / DISSERTATION</p>
-<h2>Research thesis</h2>
-</div>
-
-<div class="section-content">
+<!-- </div>
+</section> -->
 
 
-<article class="publication">
-  <p class="publication-type">THESIS / 2030</p>
-
-  <h3>Explorations in Relativistic Spin Hydrodynamics</h3>
-
-  <p>
-    <strong>Sharad Shukla</strong>
-  </p>
-
-  <p>
-    An exploration of relativistic spin hydrodynamics and the
-    theoretical framework describing spin degrees of freedom
-    in relativistic fluids. The work examines questions at the
-    intersection of relativistic fluid dynamics and spin physics.
-  </p>
-
-  <p>
-    <a class="text-link" href="https://arxiv.org/abs/XXXX.XXXXX">
-      Read thesis ↗
-    </a>
-  </p>
-</article>
-</div>
-</section>
 
 <section class="section" id="presentations">
 <div class="section-heading">
-<p class="section-number">04 / DISCUSSION</p>
+<p class="eyebrow">01 / PRESENTATION</p>
 <h2>Talks & posters</h2>
 </div>
 
@@ -142,21 +110,21 @@ publications, manuscripts, thesis, and academic presentations.
 
 
 <article class="publication">
-  <p class="publication-type">TALK / YEAR</p>
+  <p class="eyebrow">TALK / 2026</p>
 
-  <h3>Title of the talk</h3>
+  <h3>Relativistic Spin Hydrodynamics</h3>
 
   <p>
-    Department seminar · Institution · Year
+    Progress seminar · SINP · June-2026
   </p>
 
-  <p>
+  <p class="lede">
     A presentation of research findings, theoretical ideas,
-    or ongoing work.
+    and ongoing work.
   </p>
 </article>
 
-<article class="publication">
+<!-- <article class="publication">
   <p class="publication-type">POSTER / YEAR</p>
 
   <h3>Title of the poster</h3>
@@ -169,6 +137,40 @@ publications, manuscripts, thesis, and academic presentations.
     A visual presentation of the research question,
     methodology, and key results.
   </p>
+</article> -->
+</div>
+</section>
+
+
+<section class="section" id="thesis">
+<div class="section-heading">
+<p class="eyebrow">02 / DISSERTATION</p>
+<h2>Research thesis</h2>
+</div>
+
+<div class="section-content">
+
+
+<article class="publication">
+  <p class="publication-type">THESIS </p>
+
+  <h3>Explorations in Relativistic Spin Hydrodynamics<span class="accent"> (IN PROGRESS) </span></h3>
+
+  <p>
+    <strong>Sharad Shukla</strong>
+  </p>
+
+  <p class="lede">
+    An exploration of relativistic spin hydrodynamics with a
+    theoretical attempt at describing spin degrees of freedom
+    in relativistic fluids.
+  </p>
+
+  <!-- <p>
+    <a class="text-link" href="https://arxiv.org/abs/XXXX.XXXXX">
+      Read thesis ↗
+    </a>
+  </p> -->
 </article>
 </div>
 </section>
